@@ -15,7 +15,7 @@ Il progetto è composto da due servizi Docker:
    - Tipo: `Docker Compose`
    - Connetti il tuo repository Git
    - Branch: `main`
-   - Docker Compose Location: `docker-compose.yml`
+   - Docker Compose Location: `docker-compose.yaml`
 
 2. **Configura Variabili d'Ambiente**
 
