@@ -52,14 +52,14 @@ export default function Header() {
               <motion.div
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="relative h-10 w-auto"
+                className="relative h-12 sm:h-14 md:h-16 w-auto"
               >
                 <Image
                   src="/logo-white.png"
                   alt="Attic Studio"
-                  width={160}
-                  height={40}
-                  className="h-10 w-auto object-contain"
+                  width={180}
+                  height={45}
+                  className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                   priority
                 />
               </motion.div>
