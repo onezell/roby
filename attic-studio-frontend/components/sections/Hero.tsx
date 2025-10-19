@@ -57,7 +57,7 @@ export default function Hero({
             filter: 'blur(8px) brightness(0.7)',
           }}
         >
-          <source src="/videos/logo-animation.mp4" type="video/mp4" />
+          <source src="/videos/logo-animation.mp4?v=2" type="video/mp4" />
         </video>
 
         {/* Dark overlay for better text readability */}
