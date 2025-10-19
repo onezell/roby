@@ -38,7 +38,7 @@ export default function Header() {
         className={cn(
           'fixed top-0 left-0 right-0 z-50 transition-all duration-500',
           isScrolled
-            ? 'bg-background-secondary/80 backdrop-blur-xl shadow-glow-cyan border-b border-secondary/20'
+            ? 'bg-background-secondary/80 backdrop-blur-xl border-b border-secondary/20'
             : 'bg-transparent'
         )}
       >
@@ -78,7 +78,7 @@ export default function Header() {
                     className="relative font-medium text-text-secondary hover:text-secondary-glow transition-all duration-300 group"
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent group-hover:w-full transition-all duration-300 shadow-glow-cyan" />
+                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent group-hover:w-full transition-all duration-300" />
                   </Link>
                 </motion.div>
               ))}
@@ -108,15 +108,15 @@ export default function Header() {
               <div className="relative w-6 h-5">
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: 45, y: 8 } : { rotate: 0, y: 0 }}
-                  className="absolute left-0 top-0 w-full h-0.5 bg-secondary origin-left transition-all duration-300 shadow-glow-cyan"
+                  className="absolute left-0 top-0 w-full h-0.5 bg-secondary origin-left transition-all duration-300"
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { opacity: 0 } : { opacity: 1 }}
-                  className="absolute left-0 top-2 w-full h-0.5 bg-secondary transition-all duration-300 shadow-glow-cyan"
+                  className="absolute left-0 top-2 w-full h-0.5 bg-secondary transition-all duration-300"
                 />
                 <motion.span
                   animate={isMobileMenuOpen ? { rotate: -45, y: -8 } : { rotate: 0, y: 0 }}
-                  className="absolute left-0 top-4 w-full h-0.5 bg-secondary origin-left transition-all duration-300 shadow-glow-cyan"
+                  className="absolute left-0 top-4 w-full h-0.5 bg-secondary origin-left transition-all duration-300"
                 />
               </div>
             </button>

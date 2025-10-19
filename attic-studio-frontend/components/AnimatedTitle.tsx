@@ -16,52 +16,16 @@ export default function AnimatedTitle({
   as: Tag = 'h1',
   gradient = false,
 }: AnimatedTitleProps) {
-  const words = children.split(' ');
-
-  const container = {
-    hidden: { opacity: 0 },
-    visible: (i = 1) => ({
-      opacity: 1,
-      transition: { staggerChildren: 0.05, delayChildren: 0.1 * i },
-    }),
-  };
-
-  const child = {
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        type: 'spring' as const,
-        damping: 12,
-        stiffness: 100,
-      },
-    },
-    hidden: {
-      opacity: 0,
-      y: 20,
-    },
-  };
-
   return (
     <Tag className={className}>
       <motion.div
-        variants={container}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className={`flex flex-wrap gap-x-2 ${gradient ? 'gradient-text' : ''}`}
+        transition={{ duration: 0.5, ease: 'easeOut' }}
+        className={gradient ? 'gradient-text' : ''}
       >
-        {words.map((word, index) => (
-          <motion.span
-            key={index}
-            variants={child}
-            className={`inline-block ${
-              gradient && index % 2 === 0 ? 'text-glow-cyan' : ''
-            }`}
-          >
-            {word}
-          </motion.span>
-        ))}
+        {children}
       </motion.div>
     </Tag>
   );

@@ -40,11 +40,11 @@ export default function Hero({
         </div>
       )}
 
-      {/* Fullscreen Logo Animation Video - Blurred Background */}
+      {/* Fullscreen Logo Animation Video - Light Blur Background */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2, ease: 'easeOut' }}
+        transition={{ duration: 0.8, ease: 'easeOut' }}
         className="absolute inset-0 overflow-hidden"
       >
         <video
@@ -52,24 +52,24 @@ export default function Hero({
           loop
           muted
           playsInline
-          className="absolute inset-0 w-full h-full object-cover blur-sm opacity-40"
+          className="absolute inset-0 w-full h-full object-cover opacity-70"
           style={{
-            filter: 'blur(8px) brightness(0.7)',
+            filter: 'blur(2px) brightness(0.85)',
           }}
         >
           <source src="/videos/logo-animation.mp4?v=2" type="video/mp4" />
         </video>
 
-        {/* Dark overlay for better text readability */}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-background/70 to-background/80" />
+        {/* Light overlay for text readability */}
+        <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/50 to-background/60" />
       </motion.div>
 
       {/* Content */}
       <div className="container-custom relative z-10 text-center">
         <motion.div
-          initial={{ opacity: 0, y: 60 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.6, -0.05, 0.01, 0.99] }}
+          transition={{ duration: 0.5, ease: 'easeOut' }}
         >
           <AnimatedTitle
             as="h1"
@@ -81,7 +81,7 @@ export default function Hero({
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.4, delay: 0.2 }}
             className="body-large max-w-3xl mx-auto mb-8"
           >
             {subtitle}
@@ -89,9 +89,9 @@ export default function Hero({
 
           {/* CTAs */}
           <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.4, delay: 0.3 }}
             className="flex flex-col sm:flex-row gap-4 justify-center items-center"
           >
             {primaryCTA && (
@@ -115,18 +115,18 @@ export default function Hero({
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 1 }}
+          transition={{ duration: 0.5, delay: 0.5 }}
           className="absolute bottom-8 left-1/2 -translate-x-1/2"
         >
           <motion.div
             animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="w-6 h-10 border-2 border-secondary/60 rounded-full flex justify-center shadow-glow-cyan"
+            transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+            className="w-6 h-10 border-2 border-secondary/60 rounded-full flex justify-center"
           >
             <motion.div
               animate={{ y: [0, 12, 0] }}
-              transition={{ duration: 2, repeat: Infinity }}
-              className="w-1 h-3 bg-secondary rounded-full mt-2 shadow-glow-cyan"
+              transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+              className="w-1 h-3 bg-secondary rounded-full mt-2"
             />
           </motion.div>
         </motion.div>
