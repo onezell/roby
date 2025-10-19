@@ -44,11 +44,12 @@ export default function Footer() {
                 className="relative h-10 w-auto"
               >
                 <Image
-                  src="/logo-white.png"
+                  src="/images/logo-white.png"
                   alt="Attic Studio"
                   width={160}
-                  height={40}
+                  height={160}
                   className="h-10 w-auto object-contain"
+                  unoptimized
                 />
               </motion.div>
             </Link>

@@ -52,12 +52,13 @@ export default function Header() {
                 className="relative h-12 sm:h-14 md:h-16 w-auto"
               >
                 <Image
-                  src="/logo-white.png"
+                  src="/images/logo-white.png"
                   alt="Attic Studio"
                   width={180}
-                  height={45}
+                  height={180}
                   className="h-12 sm:h-14 md:h-16 w-auto object-contain"
                   priority
+                  unoptimized
                 />
               </motion.div>
             </Link>

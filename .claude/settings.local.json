@@ -1,23 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(*)",
-      "Bash(tree:*)",
-      "Bash(xargs:*)",
-      "Bash(unzip:*)",
-      "Bash(npx create-next-app@latest attic-studio-web --typescript --tailwind --app --no-src-dir --import-alias \"@/*\")",
-      "Bash(npx create-next-app@latest attic-studio-web --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
-      "mcp__playwright__browser_navigate",
-      "mcp__playwright__browser_evaluate",
-      "mcp__playwright__browser_take_screenshot",
-      "mcp__playwright__browser_close",
-      "Bash(npx create-next-app@latest attic-studio-frontend --typescript --tailwind --app --no-src-dir --import-alias \"@/*\")",
-      "Bash(npm init:*)",
-      "Bash(npm install:*)",
-      "Bash(npx tailwindcss:*)",
-      "mcp__playwright__browser_click",
-      "Bash(git commit -m \"$(cat <<''EOF''\nOptimize performance and improve video visibility\n\n- Reduce video blur from 8px to 2px for better animation visibility\n- Increase video opacity from 40% to 70%\n- Remove all shadow-glow-cyan effects from header and navigation\n- Simplify AnimatedTitle: remove word-by-word spring animation\n- Reduce animation durations across Hero section (2s -> 0.8s)\n- Optimize button hover animations (1.05 -> 1.02 scale)\n- Add explicit transition durations for smoother performance\n\nPerformance improvements:\n- Homepage bundle reduced from 7.98 kB to 7.79 kB\n- Faster page load and smoother animations\n- Better mobile performance\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
-      "Bash(git push origin main)"
+      "Bash(git add attic-studio-frontend/components/layout/Header.tsx attic-studio-frontend/public/videos/logo-animation.mp4)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nFix mobile logo visibility and restore original video\n\n- Increase mobile logo size from h-10 to h-12 (20% larger)\n- Add responsive breakpoints: h-12 (mobile), h-14 (sm), h-16 (md+)\n- Restore original video: 3.3MB → 1.3MB (60% file size reduction)\n- Improve mobile UX with larger, more visible branding\n- Faster video loading with smaller optimized file\n\nMobile improvements:\n- Logo now 20-40% larger on mobile devices\n- Better visibility and brand presence\n- Reduced video bandwidth usage by 60%\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(npm run build)",
+      "Bash(git add attic-studio-frontend/app/about/page.tsx attic-studio-frontend/app/page.tsx attic-studio-frontend/app/services/page.tsx attic-studio-frontend/components/layout/Header.tsx docker-compose.yaml)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nComplete site rewrite: Real Attic Studio content in English\n\nMAJOR CHANGES:\n- Rewrote entire site based on actual Business Plan\n- All content now in English (was Italian)\n- Fixed port mapping: 80:3000 for production access\n\nHOMEPAGE:\n- Focus on Fatewalkers (debut system-driven RPG)\n- Highlight 3 revenue streams from Business Plan\n- Market positioning (12M+ units, midcore space)\n- Clear value proposition\n\nABOUT PAGE:\n- Real founders: Roberta Migliori & Edmondo Guerci\n- Actual timeline from Business Plan (Q1 2025 onwards)\n- Mission: Accessible system-driven RPGs\n- Vision: Own our niche\n\nSERVICES PAGE:\n- Publisher-funded original IPs (Fatewalkers)\n- Selected work-for-hire projects\n- Attic Hatchling mentorship program\n- Strengths from SWOT analysis\n\nHEADER:\n- Simplified navigation (5 links)\n- English labels\n- Streamlined for clarity\n\nDOCKER:\n- Changed port from 3000:3000 to 80:3000\n- Production now accessible on port 80\n\nBundle size optimized:\n- Homepage: 7.79kB → 4.6kB (42% reduction)\n- About: 5.37kB → 4.88kB\n- Services: 6.36kB → 4.46kB\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git add attic-studio-frontend/components/layout/Footer.tsx)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nUpdate Footer to English with real Attic Studio content\n\nFooter Updates:\n- Translated all content from Italian to English\n- Simplified structure: 3 main sections (Company, Services, Connect)\n- Real contact email: roberta.migliori@atticstudio.games\n- Updated tagline: \"Building accessible system-driven RPGs for a wider audience\"\n- Copyright and branding in English\n- Removed newsletter section for cleaner design\n- All links aligned with real Business Plan content\n\nLinks structure:\n- Company: About, Games, Contact\n- Services: Original IPs, Work-for-Hire, Attic Hatchling\n- Connect: LinkedIn, Twitter, Email\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
