@@ -8,12 +8,9 @@ import { cn } from '@/lib/utils/cn'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'Games', href: '/games' },
-  { name: 'Courses', href: '/courses' },
   { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
-  { name: 'Blog', href: '/blog' },
-  { name: 'Team', href: '/team' },
+  { name: 'Games', href: '/games' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -94,7 +91,7 @@ export default function Header() {
                   href="/contact"
                   className="btn-primary"
                 >
-                  Inizia un Progetto
+                  Get in Touch
                 </Link>
               </motion.div>
             </div>
@@ -163,7 +160,7 @@ export default function Header() {
                   onClick={() => setIsMobileMenuOpen(false)}
                   className="btn-primary w-full text-center"
                 >
-                  Inizia un Progetto
+                  Get in Touch
                 </Link>
               </motion.div>
             </div>

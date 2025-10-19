@@ -2,101 +2,82 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaRocket, FaGamepad, FaUsers, FaTrophy, FaCode, FaLightbulb, FaHandshake, FaGraduationCap, FaArrowRight } from 'react-icons/fa'
+import { FaRocket, FaUsers, FaLightbulb, FaHandshake, FaTrophy, FaCode } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
+import Image from 'next/image'
 
-// Timeline data
+// Founders data - REAL from Business Plan
+const founders = [
+  {
+    name: 'Roberta Migliori',
+    role: 'Business Developer and Producer',
+    bio: 'Former Executive Producer at 3DClouds (60-person studio) and Brand Manager at Slitherine Games. Expert in planning, budgeting, team coordination, and publisher relations. Shipped 7 PC/console games in under 4 years.',
+    image: '/team/roberta.jpg',
+    linkedin: 'https://linkedin.com',
+  },
+  {
+    name: 'Edmondo Guerci',
+    role: 'Creative Director',
+    bio: 'Senior Game Designer, currently Lead Designer on an unannounced project with system-driven design. Previously worked as a Level Designer on Enotria: The Last Song (AA Soulslike) and Hot Wheels Unleashed — Game Awards nominee for Best Sports/Racing.',
+    image: '/team/edmondo.jpg',
+    linkedin: 'https://linkedin.com',
+  },
+]
+
+// Timeline milestones - REAL from Business Plan
 const milestones = [
   {
-    year: '2018',
-    title: 'La Nascita di Attic Studio',
-    description: 'Fondato da un gruppo di sviluppatori appassionati con il sogno di creare videogiochi innovativi.',
+    period: 'Q1-Q2 2025',
+    title: 'Groundwork',
+    description: 'Assembled a complete senior team and defined a clear design identity. Created first working prototype of Fatewalkers in three months.',
     icon: FaRocket,
   },
   {
-    year: '2019',
-    title: 'Primo Gioco Pubblicato',
-    description: 'Lancio di "Mystic Odyssey", il nostro primo titolo che ha raggiunto oltre 100k download.',
-    icon: FaGamepad,
-  },
-  {
-    year: '2020',
-    title: 'Espansione del Team',
-    description: 'Il team cresce a 15 persone, aggiungendo artisti, designer e sound engineer di talento.',
+    period: 'Q3-Q4 2025',
+    title: 'Building the Brand',
+    description: 'Launching Attic Hatchling mentorship program and building online presence. Working toward vertical slice for publisher funding.',
     icon: FaUsers,
   },
   {
-    year: '2021',
-    title: 'Premio "Indie Game of the Year"',
-    description: 'Cyber Nexus vince il prestigioso premio come miglior gioco indie dell\'anno.',
-    icon: FaTrophy,
-  },
-  {
-    year: '2022',
-    title: 'Lancio Divisione Formazione',
-    description: 'Iniziamo a condividere le nostre conoscenze attraverso corsi professionali di game development.',
-    icon: FaGraduationCap,
-  },
-  {
-    year: '2023',
-    title: 'Partnership Globali',
-    description: 'Collaborazioni con major publisher e università per progetti innovativi e formazione.',
+    period: 'Q1-Q2 2026',
+    title: 'Community Focus',
+    description: 'Opening Steam page and sharing demos on itch.io to build community, gather feedback, and test assumptions with real data.',
     icon: FaHandshake,
   },
   {
-    year: '2024',
-    title: 'Studio All\'Avanguardia',
-    description: 'Nuovo studio con tecnologie VR/AR e motion capture per produzione AAA.',
-    icon: FaLightbulb,
+    period: 'Q3-Q4 2026+',
+    title: 'Funding & Growth',
+    description: 'Securing publisher funding with stronger build and early community metrics. Continuing to refine and improve market fit.',
+    icon: FaTrophy,
   },
 ]
 
-// Values data
+// Values - Based on Business Plan strengths
 const values = [
   {
-    title: 'Innovazione',
-    description: 'Spingiamo costantemente i confini di ciò che è possibile nel gaming.',
-    icon: FaLightbulb,
-    color: 'from-accent-cyan to-accent-purple',
-  },
-  {
-    title: 'Qualità',
-    description: 'Ogni progetto è curato nei minimi dettagli per offrire esperienze memorabili.',
+    title: 'Experience',
+    description: 'Experienced founders with proven track record across licensed and original titles for PC and consoles.',
     icon: FaTrophy,
-    color: 'from-accent-purple to-accent-pink',
+    color: 'from-secondary to-primary',
   },
   {
-    title: 'Passione',
-    description: 'Il gaming è nel nostro DNA e guida ogni decisione che prendiamo.',
-    icon: FaGamepad,
-    color: 'from-accent-pink to-accent-orange',
+    title: 'Innovation',
+    description: 'Fast-prototyping culture: we recognize and scrap creative ideas that don\'t work, iterating toward excellence.',
+    icon: FaLightbulb,
+    color: 'from-accent to-secondary',
   },
   {
     title: 'Community',
-    description: 'Creiamo giochi che uniscono le persone e costruiscono comunità durature.',
+    description: 'The Attic Hatchling mentorship program with community impact, talent scouting, and industry visibility.',
     icon: FaUsers,
-    color: 'from-accent-orange to-accent-yellow',
+    color: 'from-primary to-accent',
   },
   {
-    title: 'Formazione',
-    description: 'Condividiamo le nostre conoscenze per far crescere la prossima generazione.',
-    icon: FaGraduationCap,
-    color: 'from-accent-yellow to-accent-green',
-  },
-  {
-    title: 'Eccellenza',
-    description: 'Puntiamo sempre all\'eccellenza tecnica e creativa in ogni aspetto.',
+    title: 'Sustainability',
+    description: 'Cost-efficient structure and clear long-term vision focused on owning our niche in system-driven RPGs.',
     icon: FaCode,
-    color: 'from-accent-green to-accent-cyan',
+    color: 'from-secondary to-accent',
   },
-]
-
-// Stats data
-const stats = [
-  { number: '50+', label: 'Giochi Sviluppati' },
-  { number: '2M+', label: 'Giocatori Attivi' },
-  { number: '30+', label: 'Professionisti' },
-  { number: '95%', label: 'Clienti Soddisfatti' },
 ]
 
 export default function AboutPage() {
@@ -110,13 +91,13 @@ export default function AboutPage() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
             transition={{ duration: 2 }}
-            className="absolute top-1/4 left-1/4 w-96 h-96 bg-accent-purple/20 rounded-full blur-3xl"
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"
           />
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 0.3 }}
             transition={{ duration: 2, delay: 0.5 }}
-            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent-cyan/20 rounded-full blur-3xl"
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
           />
         </div>
 
@@ -128,12 +109,12 @@ export default function AboutPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="heading-1 mb-6 text-text-primary">
-              Creiamo <span className="gradient-text">Esperienze</span> che Ispirano
+              We Create <span className="gradient-text">Accessible</span> System-Driven RPGs
             </h1>
             <p className="text-xl text-text-secondary mb-8">
-              Attic Studio è più di un'agenzia di sviluppo videogiochi.
-              Siamo un team di sognatori, innovatori e artigiani digitali che trasformano
-              idee audaci in realtà interattive straordinarie.
+              Attic Studio is an experienced development team with a proven track record across licensed
+              and original titles for PC and consoles. We're bringing the depth of system-driven games
+              like RimWorld and Kenshi to a wider, midcore audience.
             </p>
           </motion.div>
         </div>
@@ -148,31 +129,30 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-accent-cyan/50 transition-colors"
+              className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-secondary/50 transition-colors"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-lg flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center mb-6">
                 <FaRocket className="text-2xl text-white" />
               </div>
               <h2 className="heading-3 text-text-primary mb-4">
-                La Nostra Mission
+                Our Mission
               </h2>
               <p className="text-text-secondary mb-6">
-                Creare videogiochi che non solo intrattengono, ma ispirano, educano e connettono
-                le persone attraverso esperienze interattive uniche e memorabili. Vogliamo
-                spingere i confini della creatività e dell'innovazione nel gaming.
+                Bring the immense player freedom and replayability of system-driven games to broader audiences
+                through easier onboarding, shorter sessions, and modern UX design.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-cyan mt-1">•</span>
-                  <span className="text-text-secondary">Sviluppare giochi che raccontano storie significative</span>
+                  <span className="text-secondary mt-1">•</span>
+                  <span className="text-text-secondary">Easier onboarding for new players</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-cyan mt-1">•</span>
-                  <span className="text-text-secondary">Innovare con tecnologie all'avanguardia</span>
+                  <span className="text-secondary mt-1">•</span>
+                  <span className="text-text-secondary">Shorter, smarter sessions</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-cyan mt-1">•</span>
-                  <span className="text-text-secondary">Formare la prossima generazione di sviluppatori</span>
+                  <span className="text-secondary mt-1">•</span>
+                  <span className="text-text-secondary">Strong replayability and depth</span>
                 </li>
               </ul>
             </motion.div>
@@ -182,31 +162,30 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-accent-purple/50 transition-colors"
+              className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-accent/50 transition-colors"
             >
-              <div className="w-16 h-16 bg-gradient-to-br from-accent-purple to-accent-pink rounded-lg flex items-center justify-center mb-6">
+              <div className="w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center mb-6">
                 <FaLightbulb className="text-2xl text-white" />
               </div>
               <h2 className="heading-3 text-text-primary mb-4">
-                La Nostra Vision
+                Our Vision
               </h2>
               <p className="text-text-secondary mb-6">
-                Diventare un punto di riferimento globale nello sviluppo di videogiochi indie e AAA,
-                riconosciuti per la nostra creatività, eccellenza tecnica e capacità di creare
-                esperienze che lasciano un segno duraturo nel cuore dei giocatori.
+                Own our niche. Become the go-to studio for accessible, system-driven RPGs, building reusable
+                tech and design frameworks to scale efficiently across multiple titles.
               </p>
               <ul className="space-y-2">
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-purple mt-1">•</span>
-                  <span className="text-text-secondary">Essere leader nell'innovazione gaming</span>
+                  <span className="text-accent mt-1">•</span>
+                  <span className="text-text-secondary">Lead in system-driven game innovation</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-purple mt-1">•</span>
-                  <span className="text-text-secondary">Creare un ecosistema di talenti creativi</span>
+                  <span className="text-accent mt-1">•</span>
+                  <span className="text-text-secondary">Build scalable tools and frameworks</span>
                 </li>
                 <li className="flex items-start gap-2">
-                  <span className="text-accent-purple mt-1">•</span>
-                  <span className="text-text-secondary">Definire nuovi standard di qualità</span>
+                  <span className="text-accent mt-1">•</span>
+                  <span className="text-text-secondary">Define new standards in the genre</span>
                 </li>
               </ul>
             </motion.div>
@@ -214,35 +193,51 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="py-20 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-accent-purple/10 via-transparent to-accent-cyan/10" />
-        <div className="container-custom relative z-10">
+      {/* Founders Section */}
+      <section className="section-padding bg-background-tertiary/30">
+        <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="grid grid-cols-2 md:grid-cols-4 gap-8"
+            className="text-center mb-12"
           >
-            {stats.map((stat, index) => (
+            <h2 className="heading-2 text-text-primary mb-4">
+              Meet the <span className="gradient-text">Founders</span>
+            </h2>
+            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
+              Experienced professionals channeling years of building games together into a vision of our own
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+            {founders.map((founder, index) => (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, scale: 0.5 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                className="text-center"
+                transition={{ duration: 0.6, delay: index * 0.2 }}
+                className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
               >
-                <div className="text-4xl md:text-5xl font-bold gradient-text mb-2">
-                  {stat.number}
+                <div className="flex items-start gap-6">
+                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-secondary to-accent flex-shrink-0" />
+                  <div className="flex-1">
+                    <h3 className="heading-3 text-text-primary mb-2">
+                      {founder.name}
+                    </h3>
+                    <p className="text-secondary font-semibold mb-4">
+                      {founder.role}
+                    </p>
+                    <p className="text-text-secondary text-sm leading-relaxed">
+                      {founder.bio}
+                    </p>
+                  </div>
                 </div>
-                <p className="text-text-secondary">
-                  {stat.label}
-                </p>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
@@ -257,62 +252,45 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
-              Il Nostro <span className="gradient-text">Percorso</span>
+              Our <span className="gradient-text">Journey</span>
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Dai primi passi nel garage di casa fino a diventare uno studio riconosciuto a livello internazionale
+              From first prototype to building a sustainable indie studio
             </p>
           </motion.div>
 
-          <div className="relative">
-            {/* Timeline line */}
-            <div className="absolute left-1/2 transform -translate-x-1/2 w-1 h-full bg-gradient-to-b from-accent-cyan via-accent-purple to-accent-pink opacity-30" />
+          <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+            {milestones.map((milestone, index) => {
+              const Icon = milestone.icon
 
-            {/* Timeline items */}
-            <div className="space-y-12">
-              {milestones.map((milestone, index) => {
-                const Icon = milestone.icon
-                const isLeft = index % 2 === 0
-
-                return (
-                  <motion.div
-                    key={index}
-                    initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6, delay: index * 0.1 }}
-                    className={`flex items-center gap-8 ${isLeft ? 'md:flex-row' : 'md:flex-row-reverse'}`}
-                  >
-                    {/* Content */}
-                    <div className={`flex-1 ${isLeft ? 'md:text-right' : 'md:text-left'}`}>
-                      <div className={`inline-block ${isLeft ? 'md:ml-auto' : ''}`}>
-                        <div className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 hover:border-accent-cyan/50 transition-all hover:shadow-lg hover:shadow-accent-cyan/10">
-                          <span className="text-accent-cyan font-bold text-lg">
-                            {milestone.year}
-                          </span>
-                          <h3 className="heading-4 text-text-primary mt-2 mb-3">
-                            {milestone.title}
-                          </h3>
-                          <p className="text-text-secondary">
-                            {milestone.description}
-                          </p>
-                        </div>
-                      </div>
+              return (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.1 }}
+                  className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-lg hover:shadow-secondary/10"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center flex-shrink-0">
+                      <Icon className="text-xl text-white" />
                     </div>
-
-                    {/* Icon */}
-                    <div className="relative">
-                      <div className="w-16 h-16 bg-gradient-to-br from-accent-cyan to-accent-purple rounded-full flex items-center justify-center shadow-lg shadow-accent-cyan/30">
-                        <Icon className="text-2xl text-white" />
-                      </div>
+                    <div className="flex-1">
+                      <span className="text-secondary font-bold text-sm">
+                        {milestone.period}
+                      </span>
+                      <h3 className="heading-4 text-text-primary mt-1 mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-text-secondary text-sm">
+                        {milestone.description}
+                      </p>
                     </div>
-
-                    {/* Spacer */}
-                    <div className="flex-1 hidden md:block" />
-                  </motion.div>
-                )
-              })}
-            </div>
+                  </div>
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </section>
@@ -328,14 +306,14 @@ export default function AboutPage() {
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
-              I Nostri <span className="gradient-text">Valori</span>
+              Our <span className="gradient-text">Values</span>
             </h2>
             <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              I principi che guidano ogni nostra decisione e definiscono chi siamo
+              The principles that guide our decisions and define who we are as a studio
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map((value, index) => {
               const Icon = value.icon
 
@@ -348,112 +326,20 @@ export default function AboutPage() {
                   transition={{ duration: 0.6, delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 hover:border-accent-cyan/50 transition-all h-full hover:shadow-xl hover:shadow-accent-cyan/10 hover:-translate-y-2">
-                    <div className={`w-14 h-14 bg-gradient-to-br ${value.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
-                      <Icon className="text-2xl text-white" />
+                  <div className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 hover:border-secondary/50 transition-all h-full hover:shadow-xl hover:shadow-secondary/10 hover:-translate-y-1">
+                    <div className={`w-12 h-12 bg-gradient-to-br ${value.color} rounded-lg flex items-center justify-center mb-4 group-hover:scale-110 transition-transform`}>
+                      <Icon className="text-xl text-white" />
                     </div>
-                    <h3 className="heading-4 text-text-primary mb-3">
+                    <h3 className="heading-4 text-text-primary mb-2">
                       {value.title}
                     </h3>
-                    <p className="text-text-secondary">
+                    <p className="text-text-secondary text-sm">
                       {value.description}
                     </p>
                   </div>
                 </motion.div>
               )
             })}
-          </div>
-        </div>
-      </section>
-
-      {/* Team Preview */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center"
-          >
-            <h2 className="heading-2 text-text-primary mb-4">
-              Il Team Dietro la <span className="gradient-text">Magia</span>
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-8">
-              Un gruppo di professionisti appassionati uniti dalla voglia di creare qualcosa di straordinario
-            </p>
-
-            {/* Team grid preview */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.05 }}
-                  className="aspect-square rounded-xl bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 border border-neutral-800"
-                />
-              ))}
-            </div>
-
-            <Link href="/team">
-              <Button variant="primary" size="lg">
-                Conosci il Team Completo
-                <FaArrowRight className="ml-2" />
-              </Button>
-            </Link>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Workspace Gallery */}
-      <section className="py-20 bg-background-tertiary/30">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-12"
-          >
-            <h2 className="heading-2 text-text-primary mb-4">
-              Il Nostro <span className="gradient-text">Studio</span>
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Uno spazio creativo dove le idee prendono vita
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-              className="md:col-span-2 aspect-video bg-gradient-to-br from-accent-purple/20 to-accent-cyan/20 rounded-xl border border-neutral-800"
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              className="aspect-video bg-gradient-to-br from-accent-cyan/20 to-accent-pink/20 rounded-xl border border-neutral-800"
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="aspect-video bg-gradient-to-br from-accent-pink/20 to-accent-orange/20 rounded-xl border border-neutral-800"
-            />
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              className="md:col-span-2 aspect-video bg-gradient-to-br from-accent-orange/20 to-accent-yellow/20 rounded-xl border border-neutral-800"
-            />
           </div>
         </div>
       </section>
@@ -466,23 +352,23 @@ export default function AboutPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-accent-purple/20 via-background-tertiary to-accent-cyan/20 rounded-2xl p-12 text-center border border-neutral-800"
+            className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800"
           >
             <h2 className="heading-2 text-text-primary mb-4">
-              Pronto a Creare Qualcosa di <span className="gradient-text">Straordinario</span>?
+              Want to Learn More?
             </h2>
             <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-              Che tu voglia sviluppare un gioco o imparare a crearne uno, siamo qui per aiutarti
+              Explore our debut title Fatewalkers or check out our mentorship program
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/games">
                 <Button variant="primary" size="lg">
-                  Inizia un Progetto
+                  Discover Fatewalkers
                 </Button>
               </Link>
-              <Link href="/courses">
+              <Link href="/services">
                 <Button variant="outline" size="lg">
-                  Esplora i Corsi
+                  Our Services
                 </Button>
               </Link>
             </div>
