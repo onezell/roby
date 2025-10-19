@@ -9,8 +9,15 @@ services:
       - "1337:1337"
     environment:
       - NODE_ENV=production
+      - HOST=0.0.0.0
+      - PORT=1337
       - DATABASE_CLIENT=sqlite
       - DATABASE_FILENAME=.tmp/data.db
+      - APP_KEYS=changeme1changeme1changeme1changeme1,changeme2changeme2changeme2changeme2
+      - API_TOKEN_SALT=changeMetoARandomStringSalt123456
+      - ADMIN_JWT_SECRET=changeMeToARandomJWTSecret123456
+      - TRANSFER_TOKEN_SALT=changeMeToARandomTokenSalt123
+      - JWT_SECRET=changeMeToARandomJWTSecret789012
     volumes:
       - backend-data:/app/.tmp
       - backend-uploads:/app/public/uploads
