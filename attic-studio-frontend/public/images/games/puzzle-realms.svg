@@ -1,0 +1,21 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="puzzleGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a2847;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#2a3857;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1a2847;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#puzzleGrad)"/>
+  <rect x="100" y="100" width="150" height="150" fill="#F8C457" opacity="0.3" rx="10"/>
+  <rect x="270" y="100" width="150" height="150" fill="#639FCF" opacity="0.3" rx="10"/>
+  <rect x="440" y="100" width="150" height="150" fill="#1250A1" opacity="0.3" rx="10"/>
+  <rect x="100" y="270" width="150" height="150" fill="#639FCF" opacity="0.3" rx="10"/>
+  <rect x="270" y="270" width="150" height="150" fill="#F8C457" opacity="0.3" rx="10"/>
+  <rect x="440" y="270" width="150" height="150" fill="#7db8ff" opacity="0.3" rx="10"/>
+  <circle cx="400" cy="225" r="150" fill="#0a1128" opacity="0.8"/>
+  <text x="400" y="210" font-family="Arial, sans-serif" font-size="42" font-weight="bold" fill="#F8C457" text-anchor="middle">Puzzle Realms</text>
+  <text x="400" y="250" font-family="Arial, sans-serif" font-size="18" fill="#ffffff" text-anchor="middle">Mind-Bending Puzzles</text>
+  <rect x="330" y="270" width="140" height="35" rx="17.5" fill="#F8C457" opacity="0.9"/>
+  <text x="400" y="294" font-family="Arial, sans-serif" font-size="14" fill="#0a1128" text-anchor="middle" font-weight="bold">Mobile • Switch</text>
+</svg>

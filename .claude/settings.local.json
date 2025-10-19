@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find:*)",
+      "Bash(tree:*)",
+      "Bash(xargs:*)",
+      "Bash(unzip:*)",
+      "Bash(npx create-next-app@latest attic-studio-web --typescript --tailwind --app --no-src-dir --import-alias \"@/*\")",
+      "Bash(npx create-next-app@latest attic-studio-web --typescript --tailwind --app --no-src-dir --import-alias \"@/*\" --eslint)",
+      "mcp__playwright__browser_navigate",
+      "mcp__playwright__browser_evaluate",
+      "mcp__playwright__browser_take_screenshot",
+      "mcp__playwright__browser_close",
+      "Bash(npx create-next-app@latest attic-studio-frontend --typescript --tailwind --app --no-src-dir --import-alias \"@/*\")",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(npx tailwindcss:*)",
+      "mcp__playwright__browser_click"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

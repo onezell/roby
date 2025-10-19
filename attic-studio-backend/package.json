@@ -1,0 +1,19 @@
+{
+  "name": "attic-studio-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@strapi/strapi": "^5.28.0",
+    "sqlite3": "^5.1.7"
+  }
+}
