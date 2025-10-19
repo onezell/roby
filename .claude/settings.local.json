@@ -1,7 +1,7 @@
 {
   "permissions": {
     "allow": [
-      "Bash(find:*)",
+      "Bash(*)",
       "Bash(tree:*)",
       "Bash(xargs:*)",
       "Bash(unzip:*)",
@@ -15,7 +15,9 @@
       "Bash(npm init:*)",
       "Bash(npm install:*)",
       "Bash(npx tailwindcss:*)",
-      "mcp__playwright__browser_click"
+      "mcp__playwright__browser_click",
+      "Bash(git commit -m \"$(cat <<''EOF''\nOptimize performance and improve video visibility\n\n- Reduce video blur from 8px to 2px for better animation visibility\n- Increase video opacity from 40% to 70%\n- Remove all shadow-glow-cyan effects from header and navigation\n- Simplify AnimatedTitle: remove word-by-word spring animation\n- Reduce animation durations across Hero section (2s -> 0.8s)\n- Optimize button hover animations (1.05 -> 1.02 scale)\n- Add explicit transition durations for smoother performance\n\nPerformance improvements:\n- Homepage bundle reduced from 7.98 kB to 7.79 kB\n- Faster page load and smoother animations\n- Better mobile performance\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")",
+      "Bash(git push origin main)"
     ],
     "deny": [],
     "ask": []
