@@ -1,6 +1,6 @@
 'use client'
 
-import { useState } from 'react'
+import { use, useState } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaStar, FaClock, FaUsers, FaGraduationCap, FaCheckCircle, FaPlayCircle, FaCalendarAlt, FaShieldAlt, FaArrowLeft, FaChevronDown, FaChevronUp } from 'react-icons/fa'
@@ -186,7 +186,8 @@ const mockCourse = {
   ]
 }
 
-export default function CourseDetailPage({ params }: { params: { slug: string } }) {
+export default function CourseDetailPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params)
   const [activeTab, setActiveTab] = useState('overview')
   const [expandedModules, setExpandedModules] = useState<number[]>([1])
   const [showAllFaqs, setShowAllFaqs] = useState(false)

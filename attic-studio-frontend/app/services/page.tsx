@@ -6,7 +6,7 @@ import Link from 'next/link'
 import {
   FaGamepad, FaPaintBrush, FaCode, FaMusic, FaLightbulb, FaRocket,
   FaCube, FaMobileAlt, FaDesktop, FaVrCardboard, FaCheckCircle,
-  FaArrowRight, FaBrain, FaChartLine, FaUsers, FaCogs
+  FaArrowRight, FaBrain, FaChartLine, FaUsers, FaCogs, FaTrophy, FaHandshake
 } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 

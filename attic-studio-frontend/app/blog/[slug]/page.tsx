@@ -1,5 +1,6 @@
 'use client'
 
+import { use } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaClock, FaUser, FaTag, FaArrowLeft, FaTwitter, FaLinkedin, FaFacebook, FaLink } from 'react-icons/fa'
@@ -82,7 +83,9 @@ const relatedPosts = [
   },
 ]
 
-export default function BlogPostPage({ params }: { params: { slug: string } }) {
+export default function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = use(params)
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-background-primary via-background-secondary to-background-primary">
       {/* Header */}

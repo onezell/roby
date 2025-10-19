@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils/cn'
 import Image from 'next/image'
 import Link from 'next/link'
 
-interface CardProps extends HTMLAttributes<HTMLDivElement> {
+interface CardProps extends Omit<HTMLAttributes<HTMLDivElement>, 'onAnimationStart' | 'onDragStart' | 'onDragEnd' | 'onDrag'> {
   hover?: boolean
   variant?: 'default' | 'bordered' | 'shadow'
 }
