@@ -9,7 +9,9 @@ Il sito deve essere compatibile con Strapi per la gestione dei contenuti.
 Il sito deve essere sviluppato in linguaggio moderno (2025) con un framework grafico accattivante.
 Sarà hostato in un VPS utilizzando Coolify (dove sarà anche il backend strapi)
 L'aspetto del sito web deve essere identico a https://www.febucci.com/
-Il font per i title sarà Agandir (trovi la cartella nel progetto) mentre per il testo dei paragrafi usiamo Raleway.
+Il font per 
+
+i title sarà Agandir (trovi la cartella nel progetto) mentre per il testo dei paragrafi usiamo Raleway.
 
 La palette grafica è in PALETTE ATTIC STUDIO.png
 
