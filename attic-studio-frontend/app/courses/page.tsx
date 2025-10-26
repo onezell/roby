@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 
 export default function MentorshipPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background-primary via-background-secondary to-background-primary">
+    <div className="min-h-screen bg-background-primary">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">
