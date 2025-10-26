@@ -2,90 +2,14 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import Image from 'next/image'
-import { FaGraduationCap, FaUsers, FaLightbulb, FaHandshake, FaStar, FaRocket, FaArrowRight } from 'react-icons/fa'
+import { FaGraduationCap, FaUsers, FaLightbulb, FaHandshake, FaStar, FaDiscord, FaArrowRight, FaHeart } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
-// Program benefits from Business Plan
-const programBenefits = [
-  {
-    icon: FaGraduationCap,
-    title: 'One-on-One Mentorship',
-    description: 'Direct guidance from industry veterans with years of experience in game development and production',
-  },
-  {
-    icon: FaLightbulb,
-    title: 'Hands-On Game Dev Guidance',
-    description: 'Practical advice on design, production, and career development in the game industry',
-  },
-  {
-    icon: FaHandshake,
-    title: 'Portfolio Review',
-    description: 'Professional feedback on your work and guidance to build a portfolio that stands out',
-  },
-  {
-    icon: FaUsers,
-    title: 'Community of Aspiring Developers',
-    description: 'Join a network of talented developers sharing the same passion and ambition',
-  },
-  {
-    icon: FaStar,
-    title: 'Industry Visibility',
-    description: 'Connect with professionals and get recognized in the game development community',
-  },
-  {
-    icon: FaRocket,
-    title: 'Career Acceleration',
-    description: 'Fast-track your growth with personalized advice tailored to your goals and strengths',
-  },
-]
-
-// Mentors from Business Plan (real founders)
-const mentors = [
-  {
-    name: 'Roberta Migliori',
-    role: 'Business Developer & Producer',
-    bio: 'Former Executive Producer at 3DClouds (60-person studio) and Brand Manager at Slitherine Games, with extensive experience in production and business development.',
-    image: '/images/roberta.jpg',
-  },
-  {
-    name: 'Edmondo Guerci',
-    role: 'Creative Director',
-    bio: 'Senior Game Designer with a focus on system-driven design, currently Lead Designer on an unannounced project with deep emergent gameplay mechanics.',
-    image: '/images/edmondo.jpg',
-  },
-]
-
-// How it works
-const howItWorksSteps = [
-  {
-    step: '01',
-    title: 'Apply',
-    description: 'Reach out through our contact form and tell us about yourself, your experience, and your goals',
-  },
-  {
-    step: '02',
-    title: 'Review',
-    description: 'We review your application and portfolio to understand how we can best support your growth',
-  },
-  {
-    step: '03',
-    title: 'Match',
-    description: 'Get matched with one of our mentors based on your needs and aspirations',
-  },
-  {
-    step: '04',
-    title: 'Grow',
-    description: 'Start your mentorship journey with regular sessions, feedback, and guidance',
-  },
-]
-
-export default function CoursesPage() {
+export default function MentorshipPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-background-primary via-background-secondary to-background-primary">
       {/* Hero Section */}
       <section className="relative min-h-[80vh] flex items-center justify-center overflow-hidden">
-        {/* Animated background */}
         <div className="absolute inset-0 overflow-hidden">
           <motion.div
             initial={{ opacity: 0 }}
@@ -108,41 +32,35 @@ export default function CoursesPage() {
             transition={{ duration: 0.6 }}
             className="text-center max-w-4xl mx-auto"
           >
-            <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="inline-block mb-6"
-            >
-              <span className="px-4 py-2 bg-primary/20 border border-primary/30 rounded-full text-primary-light text-sm font-semibold">
-                Mentorship Program
-              </span>
-            </motion.div>
-
             <h1 className="heading-hero mb-6 text-text-primary">
-              The <span className="gradient-text">Attic Hatchling</span>
+              We guide game developers
+              <br />
+              to <span className="gradient-text">take off</span>
             </h1>
 
-            <p className="text-2xl text-text-secondary mb-8 leading-relaxed">
-              Growing the next generation of game developers
+            <p className="text-xl text-text-secondary mb-8 leading-relaxed">
+              We believe that supporting the future of gaming means supporting the next generation of developers.
             </p>
 
             <p className="text-lg text-text-muted mb-12 max-w-3xl mx-auto">
-              A mentorship initiative by our founders, already tested with dozens of aspiring developers.
-              We're growing it into a sustainable platform for talent scouting, industry visibility,
-              and community impact — always aligned with our studio values.
+              That's why we built <strong className="text-text-primary">Attic Hatchlings</strong>, a free mentorship community open to developers
+              of all levels who are finding their path after game development academies.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Link href="/contact">
+              <a
+                href="https://discord.gg/3eajWBkGyD"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Button size="lg" variant="primary">
-                  Apply Now
-                  <FaArrowRight className="ml-2" />
+                  <FaDiscord className="mr-2" />
+                  Join Attic Hatchlings
                 </Button>
-              </Link>
-              <Link href="/about">
+              </a>
+              <Link href="/contact">
                 <Button size="lg" variant="outline">
-                  About Our Studio
+                  Get in Touch
                 </Button>
               </Link>
             </div>
@@ -150,7 +68,7 @@ export default function CoursesPage() {
         </div>
       </section>
 
-      {/* Program Benefits */}
+      {/* Why Section */}
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
@@ -158,46 +76,27 @@ export default function CoursesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="heading-2 text-text-primary mb-4">
-              What You'll <span className="gradient-text">Get</span>
+            <h2 className="heading-2 text-text-primary mb-6 text-center">
+              <span className="gradient-text">Why</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Comprehensive mentorship designed to accelerate your game development career
+            <p className="text-text-secondary mb-6 leading-relaxed text-center">
+              Finding a job in the gaming industry has never been harder. Junior talent often feels left alone after
+              academies end, and connecting with experienced professionals can seem impossible. If we don't address this,
+              talented developers risk never fully developing the skills they need — and the industry risks losing the
+              creators of tomorrow, especially in Italy.
+            </p>
+            <p className="text-text-secondary leading-relaxed text-center">
+              We help juniors navigate this challenging landscape, keeping them motivated and increasing their chances of
+              success through mentorship, specialized training, feedback, and a supportive community during the toughest
+              moments in the industry we love.
             </p>
           </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {programBenefits.map((benefit, index) => {
-              const Icon = benefit.icon
-
-              return (
-                <motion.div
-                  key={benefit.title}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.6, delay: index * 0.1 }}
-                  className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
-                >
-                  <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
-                    <Icon className="text-2xl text-white" />
-                  </div>
-                  <h3 className="heading-4 text-text-primary mb-3">
-                    {benefit.title}
-                  </h3>
-                  <p className="text-text-secondary leading-relaxed">
-                    {benefit.description}
-                  </p>
-                </motion.div>
-              )
-            })}
-          </div>
         </div>
       </section>
 
-      {/* Meet the Mentors */}
+      {/* Programs Section */}
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
@@ -205,165 +104,117 @@ export default function CoursesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-center mb-16"
+            className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
-              Meet Your <span className="gradient-text">Mentors</span>
+              Our <span className="gradient-text">Programs</span>
             </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Learn from industry veterans who've shipped successful titles and built teams
-            </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {mentors.map((mentor, index) => (
-              <motion.div
-                key={mentor.name}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
-                className="bg-background-elevated rounded-2xl p-8 border border-neutral-800"
-              >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 bg-gradient-to-br from-primary/20 to-accent/20 rounded-full mb-6 flex items-center justify-center border-2 border-primary/30">
-                    <FaUsers className="text-5xl text-primary/70" />
-                  </div>
-                  <h3 className="heading-3 text-text-primary mb-2">
-                    {mentor.name}
-                  </h3>
-                  <p className="text-secondary font-semibold mb-4">
-                    {mentor.role}
-                  </p>
-                  <p className="text-text-secondary leading-relaxed">
-                    {mentor.bio}
-                  </p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="text-center mb-16"
-          >
-            <h2 className="heading-2 text-text-primary mb-4">
-              How It <span className="gradient-text">Works</span>
-            </h2>
-            <p className="text-xl text-text-secondary max-w-3xl mx-auto">
-              Simple steps to start your mentorship journey
-            </p>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {howItWorksSteps.map((stepItem, index) => (
-              <motion.div
-                key={stepItem.step}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.1 }}
-                className="relative"
-              >
-                <div className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 h-full">
-                  <div className="text-5xl font-bold gradient-text mb-4 opacity-30">
-                    {stepItem.step}
-                  </div>
-                  <h3 className="heading-4 text-text-primary mb-3">
-                    {stepItem.title}
-                  </h3>
-                  <p className="text-text-secondary text-sm leading-relaxed">
-                    {stepItem.description}
-                  </p>
-                </div>
-                {index < howItWorksSteps.length - 1 && (
-                  <div className="hidden lg:block absolute top-1/2 -right-4 w-8 h-0.5 bg-gradient-to-r from-primary to-transparent" />
-                )}
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Who Should Apply */}
-      <section className="section-padding bg-background-tertiary/30">
-        <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-3 gap-8">
+            {/* Free Mentorship Community */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
             >
-              <h2 className="heading-2 text-text-primary mb-6">
-                Who Should <span className="gradient-text">Apply</span>
-              </h2>
-              <p className="text-text-secondary mb-6 leading-relaxed">
-                The Attic Hatchling is designed for aspiring game developers who are serious about building a career in the industry.
+              <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
+                <FaUsers className="text-2xl text-white" />
+              </div>
+              <h3 className="heading-3 text-text-primary mb-3">
+                Free Mentorship Community
+              </h3>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                Attic Hatchlings is our free mentorship program on Discord.
               </p>
-              <ul className="space-y-4">
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="text-text-primary font-semibold mb-1">Junior Developers</h4>
-                    <p className="text-text-secondary text-sm">Looking to break into the industry or level up their skills</p>
-                  </div>
+              <ul className="space-y-2 mb-6">
+                <li className="flex items-start gap-2 text-text-secondary text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Post your CV and portfolio to get expert feedback</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="text-text-primary font-semibold mb-1">Career Changers</h4>
-                    <p className="text-text-secondary text-sm">Transitioning from other fields into game development</p>
-                  </div>
+                <li className="flex items-start gap-2 text-text-secondary text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Ask for career advice</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="text-text-primary font-semibold mb-1">Self-Taught Developers</h4>
-                    <p className="text-text-secondary text-sm">Need guidance on best practices and industry standards</p>
-                  </div>
+                <li className="flex items-start gap-2 text-text-secondary text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Find peers to create your own projects</span>
                 </li>
-                <li className="flex items-start gap-3">
-                  <div className="w-6 h-6 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
-                    <span className="text-white text-xs">✓</span>
-                  </div>
-                  <div>
-                    <h4 className="text-text-primary font-semibold mb-1">Students & Recent Graduates</h4>
-                    <p className="text-text-secondary text-sm">Want real-world insights beyond academic learning</p>
-                  </div>
+                <li className="flex items-start gap-2 text-text-secondary text-sm">
+                  <span className="text-primary mt-1">•</span>
+                  <span>Book a free live mentorship session once a week</span>
                 </li>
               </ul>
+              <a
+                href="https://discord.gg/3eajWBkGyD"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-light transition-colors inline-flex items-center gap-2 font-semibold"
+              >
+                Join on Discord
+                <FaArrowRight />
+              </a>
             </motion.div>
 
+            {/* Private Mentorships */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-accent/50 transition-all hover:shadow-xl hover:shadow-accent/10"
+            >
+              <div className="w-14 h-14 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center mb-6">
+                <FaHandshake className="text-2xl text-white" />
+              </div>
+              <h3 className="heading-3 text-text-primary mb-3">
+                Private Mentorships
+              </h3>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                For faster, in-depth feedback and private mentorship beyond the community schedule, we offer sessions at
+                accessible prices, fully reinvested into our first game prototype.
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed italic">
+                Even if you don't book a private session, chatting and asking for advice is always free: the community
+                is yours to use as much as you like!
+              </p>
+            </motion.div>
+
+            {/* Premium Courses */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
+              className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/20 to-accent/20 rounded-2xl border border-neutral-800 flex items-center justify-center">
-                <FaGraduationCap className="text-8xl text-primary/50" />
+              <div className="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center mb-6">
+                <FaGraduationCap className="text-2xl text-white" />
               </div>
+              <h3 className="heading-3 text-text-primary mb-3">
+                Premium Courses
+              </h3>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                We create premium courses aimed at <strong className="text-text-primary">specializing after academies</strong> end.
+              </p>
+              <p className="text-text-secondary text-sm leading-relaxed mb-6">
+                Current offering: <strong className="text-text-primary">Level Design Online Course</strong> starting January 2025
+              </p>
+              <Link
+                href="/level-design-course"
+                className="text-secondary hover:text-secondary-glow transition-colors inline-flex items-center gap-2 font-semibold"
+              >
+                Learn More
+                <FaArrowRight />
+              </Link>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
+      {/* For Academies */}
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
@@ -371,25 +222,44 @@ export default function CoursesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-gradient-to-r from-primary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800"
+            className="max-w-4xl mx-auto text-center"
           >
-            <h2 className="heading-2 text-text-primary mb-4">
-              Ready to <span className="gradient-text">Start Your Journey</span>?
-            </h2>
-            <p className="text-xl text-text-secondary mb-8 max-w-2xl mx-auto">
-              Join the Attic Hatchling mentorship program and accelerate your game development career
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <div className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800">
+              <h2 className="heading-2 text-text-primary mb-4">
+                Are you a <span className="gradient-text">game dev academy</span>? Get in touch!
+              </h2>
+              <p className="text-text-secondary mb-6 leading-relaxed">
+                Are you a game development academy? We love collaborating on training, classes, and potential partnerships
+                with Attic Hatchlings.
+              </p>
               <Link href="/contact">
                 <Button variant="primary" size="lg">
-                  Apply Now
+                  Contact Us
                 </Button>
               </Link>
-              <Link href="/services">
-                <Button variant="outline" size="lg">
-                  Learn About Our Studio
-                </Button>
-              </Link>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Donate Section (placeholder) */}
+      <section className="section-padding bg-background-tertiary/30">
+        <div className="container-custom">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="max-w-3xl mx-auto text-center"
+          >
+            <div className="bg-background-elevated rounded-2xl p-8 border border-neutral-800">
+              <FaHeart className="text-5xl text-primary mx-auto mb-4" />
+              <h2 className="heading-3 text-text-primary mb-4">
+                Support Our Mission
+              </h2>
+              <p className="text-text-secondary text-sm italic">
+                (We'll open a Buy me a coffee account soon – still handling some bureaucratic matters!)
+              </p>
             </div>
           </motion.div>
         </div>

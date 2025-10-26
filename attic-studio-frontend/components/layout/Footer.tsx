@@ -8,7 +8,7 @@ const footerLinks = {
   company: {
     title: 'Company',
     links: [
-      { name: 'About', href: '/about' },
+      { name: 'Home', href: '/' },
       { name: 'Games', href: '/games' },
       { name: 'Contact', href: '/contact' },
     ],
@@ -16,9 +16,9 @@ const footerLinks = {
   services: {
     title: 'Services',
     links: [
-      { name: 'Original IPs', href: '/services#original-ips' },
-      { name: 'Work-for-Hire', href: '/services#work-for-hire' },
-      { name: 'Attic Hatchling', href: '/services#mentorship' },
+      { name: 'Consulting & Work-for-Hire', href: '/services' },
+      { name: 'Attic Hatchlings', href: '/courses' },
+      { name: 'Level Design Course', href: '/level-design-course' },
     ],
   },
   connect: {
@@ -54,7 +54,7 @@ export default function Footer() {
               </motion.div>
             </Link>
             <p className="text-sm text-text-muted mb-4 max-w-xs">
-              Building accessible system-driven RPGs for a wider audience. Bringing depth in small doses.
+              A game dev startup finding its wings while helping others fly too.
             </p>
           </div>
 

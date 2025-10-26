@@ -8,11 +8,11 @@ import { z } from 'zod'
 import Button from '@/components/ui/Button'
 
 const contactSchema = z.object({
-  name: z.string().min(2, 'Il nome deve contenere almeno 2 caratteri'),
-  email: z.string().email('Email non valida'),
+  name: z.string().min(2, 'Name must be at least 2 characters'),
+  email: z.string().email('Invalid email address'),
   phone: z.string().optional(),
-  subject: z.string().min(5, 'L\'oggetto deve contenere almeno 5 caratteri'),
-  message: z.string().min(20, 'Il messaggio deve contenere almeno 20 caratteri'),
+  subject: z.string().min(5, 'Subject must be at least 5 characters'),
+  message: z.string().min(20, 'Message must be at least 20 characters'),
   type: z.enum(['project', 'course', 'info', 'other'])
 })
 
@@ -22,26 +22,26 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email',
-    content: 'info@atticstudio.com',
-    link: 'mailto:info@atticstudio.com'
+    content: 'roberta.migliori@atticstudio.games',
+    link: 'mailto:roberta.migliori@atticstudio.games'
   },
   {
-    icon: '📱',
-    title: 'Telefono',
-    content: '+39 02 1234567',
-    link: 'tel:+390212345678'
+    icon: '💬',
+    title: 'Discord',
+    content: 'Join our community',
+    link: 'https://discord.gg/3eajWBkGyD'
   },
   {
-    icon: '📍',
-    title: 'Indirizzo',
-    content: 'Via Roma 123, 20121 Milano',
-    link: '#'
+    icon: '💼',
+    title: 'LinkedIn',
+    content: 'Connect with us',
+    link: 'https://linkedin.com'
   },
   {
-    icon: '🕒',
-    title: 'Orari',
-    content: 'Lun-Ven 9:00-18:00',
-    link: '#'
+    icon: '🐦',
+    title: 'Twitter',
+    content: 'Follow us',
+    link: 'https://twitter.com'
   }
 ]
 
@@ -77,21 +77,36 @@ export default function ContactPage() {
   }
 
   return (
-    <>
+    <div className="min-h-screen bg-gradient-to-b from-background-primary via-background-secondary to-background-primary">
       {/* Hero Section */}
-      <section className="relative py-20 bg-gradient-to-b from-primary-50 to-white">
-        <div className="container-custom">
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 2 }}
+            className="absolute top-1/4 left-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-3xl"
+          />
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.3 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
+          />
+        </div>
+
+        <div className="container-custom relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
-            <h1 className="heading-1 mb-4">
-              Iniziamo a <span className="gradient-text">Collaborare</span>
+            <h1 className="heading-1 mb-4 text-text-primary">
+              Get in <span className="gradient-text">touch</span>
             </h1>
-            <p className="body-large text-neutral-600 max-w-2xl mx-auto">
-              Hai un progetto in mente? Parliamone insieme e trasformiamo la tua idea in realtà
+            <p className="text-xl text-text-secondary max-w-2xl mx-auto">
+              Whether you're interested in our games, mentorship program, or partnership opportunities
             </p>
           </motion.div>
         </div>
@@ -108,7 +123,7 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-1"
             >
-              <h2 className="heading-3 mb-8">Informazioni di Contatto</h2>
+              <h2 className="heading-3 text-text-primary mb-8">Contact Information</h2>
 
               <div className="space-y-6">
                 {contactInfo.map((info, index) => (
@@ -118,14 +133,14 @@ export default function ContactPage() {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-start gap-4 p-4 rounded-lg hover:bg-neutral-50 transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-lg bg-background-tertiary/50 hover:bg-background-tertiary transition-colors group border border-neutral-800"
                   >
-                    <div className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center text-2xl group-hover:bg-primary-200 transition-colors">
+                    <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
                       {info.icon}
                     </div>
                     <div>
-                      <h3 className="font-semibold text-neutral-900 mb-1">{info.title}</h3>
-                      <p className="text-neutral-600">{info.content}</p>
+                      <h3 className="font-semibold text-text-primary mb-1">{info.title}</h3>
+                      <p className="text-text-secondary">{info.content}</p>
                     </div>
                   </motion.a>
                 ))}
@@ -133,14 +148,14 @@ export default function ContactPage() {
 
               {/* Social Links */}
               <div className="mt-12">
-                <h3 className="font-semibold text-neutral-900 mb-4">Seguici sui Social</h3>
+                <h3 className="font-semibold text-text-primary mb-4">Follow Us</h3>
                 <div className="flex gap-3">
                   {['LinkedIn', 'Twitter', 'GitHub', 'YouTube'].map((social) => (
                     <motion.a
                       key={social}
                       href="#"
                       whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-10 h-10 bg-neutral-100 rounded-lg flex items-center justify-center text-neutral-600 hover:bg-primary-100 hover:text-primary-600 transition-colors"
+                      className="w-10 h-10 bg-background-tertiary rounded-lg flex items-center justify-center text-text-secondary hover:bg-gradient-to-br hover:from-secondary hover:to-accent hover:text-white transition-all border border-neutral-800"
                     >
                       {social[0]}
                     </motion.a>
@@ -156,22 +171,22 @@ export default function ContactPage() {
               transition={{ duration: 0.6 }}
               className="lg:col-span-2"
             >
-              <div className="bg-white rounded-2xl shadow-xl p-8 md:p-12">
-                <h2 className="heading-3 mb-8">Inviaci un Messaggio</h2>
+              <div className="bg-background-tertiary rounded-2xl border border-neutral-800 p-8 md:p-12">
+                <h2 className="heading-3 text-text-primary mb-8">Send us a Message</h2>
 
                 <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
                   {/* Name and Email Row */}
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="name" className="label">
-                        Nome Completo *
+                        Full Name *
                       </label>
                       <input
                         {...register('name')}
                         type="text"
                         id="name"
                         className="input"
-                        placeholder="Mario Rossi"
+                        placeholder="John Doe"
                       />
                       {errors.name && (
                         <p className="text-red-500 text-sm mt-1">{errors.name.message}</p>
@@ -187,7 +202,7 @@ export default function ContactPage() {
                         type="email"
                         id="email"
                         className="input"
-                        placeholder="mario@esempio.com"
+                        placeholder="john@example.com"
                       />
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
@@ -199,30 +214,30 @@ export default function ContactPage() {
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
                       <label htmlFor="phone" className="label">
-                        Telefono
+                        Phone
                       </label>
                       <input
                         {...register('phone')}
                         type="tel"
                         id="phone"
                         className="input"
-                        placeholder="+39 123 456 7890"
+                        placeholder="+1 234 567 8900"
                       />
                     </div>
 
                     <div>
                       <label htmlFor="type" className="label">
-                        Tipo di Richiesta *
+                        Inquiry Type *
                       </label>
                       <select
                         {...register('type')}
                         id="type"
                         className="input"
                       >
-                        <option value="project">Nuovo Progetto</option>
-                        <option value="course">Informazioni Corsi</option>
-                        <option value="info">Informazioni Generali</option>
-                        <option value="other">Altro</option>
+                        <option value="project">New Project</option>
+                        <option value="course">Course Information</option>
+                        <option value="info">General Information</option>
+                        <option value="other">Other</option>
                       </select>
                     </div>
                   </div>
@@ -230,14 +245,14 @@ export default function ContactPage() {
                   {/* Subject */}
                   <div>
                     <label htmlFor="subject" className="label">
-                      Oggetto *
+                      Subject *
                     </label>
                     <input
                       {...register('subject')}
                       type="text"
                       id="subject"
                       className="input"
-                      placeholder="Di cosa vuoi parlare?"
+                      placeholder="What would you like to discuss?"
                     />
                     {errors.subject && (
                       <p className="text-red-500 text-sm mt-1">{errors.subject.message}</p>
@@ -247,14 +262,14 @@ export default function ContactPage() {
                   {/* Message */}
                   <div>
                     <label htmlFor="message" className="label">
-                      Messaggio *
+                      Message *
                     </label>
                     <textarea
                       {...register('message')}
                       id="message"
                       rows={6}
                       className="textarea"
-                      placeholder="Raccontaci del tuo progetto..."
+                      placeholder="Tell us about your project..."
                     />
                     {errors.message && (
                       <p className="text-red-500 text-sm mt-1">{errors.message.message}</p>
@@ -268,7 +283,7 @@ export default function ContactPage() {
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-green-50 text-green-800 rounded-lg"
                     >
-                      Messaggio inviato con successo! Ti risponderemo al più presto.
+                      Message sent successfully! We'll get back to you as soon as possible.
                     </motion.div>
                   )}
 
@@ -278,7 +293,7 @@ export default function ContactPage() {
                       animate={{ opacity: 1, y: 0 }}
                       className="p-4 bg-red-50 text-red-800 rounded-lg"
                     >
-                      Si è verificato un errore. Riprova più tardi.
+                      An error occurred. Please try again later.
                     </motion.div>
                   )}
 
@@ -290,7 +305,7 @@ export default function ContactPage() {
                       isLoading={isSubmitting}
                       disabled={isSubmitting}
                     >
-                      Invia Messaggio
+                      Send Message
                     </Button>
                   </div>
                 </form>
@@ -301,7 +316,7 @@ export default function ContactPage() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-20 bg-neutral-50">
+      <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -310,27 +325,27 @@ export default function ContactPage() {
             transition={{ duration: 0.6 }}
             className="max-w-3xl mx-auto"
           >
-            <h2 className="heading-2 text-center mb-12">
-              Domande <span className="gradient-text">Frequenti</span>
+            <h2 className="heading-2 text-center mb-12 text-text-primary">
+              <span className="gradient-text">FAQ</span>
             </h2>
 
             <div className="space-y-4">
               {[
                 {
-                  q: 'Quanto costa sviluppare un videogioco?',
-                  a: 'Il costo dipende dalla complessità del progetto. Offriamo preventivi personalizzati dopo una prima consulenza gratuita.'
+                  q: 'How much does game development cost?',
+                  a: 'Cost depends on project complexity. We offer custom quotes after a free initial consultation.'
                 },
                 {
-                  q: 'Quanto tempo richiede lo sviluppo?',
-                  a: 'I tempi variano da 3 mesi per progetti semplici fino a 12+ mesi per giochi complessi multipiattaforma.'
+                  q: 'How long does development take?',
+                  a: 'Timeline varies from 3 months for simple projects to 12+ months for complex multiplatform games.'
                 },
                 {
-                  q: 'Offrite supporto post-lancio?',
-                  a: 'Sì, offriamo pacchetti di manutenzione e aggiornamento personalizzati per tutti i nostri progetti.'
+                  q: 'Do you offer post-launch support?',
+                  a: 'Yes, we offer customized maintenance and update packages for all our projects.'
                 },
                 {
-                  q: 'Posso seguire un corso senza esperienza?',
-                  a: 'Certamente! Abbiamo corsi per tutti i livelli, dai principianti agli sviluppatori esperti.'
+                  q: 'Can I join a course without experience?',
+                  a: 'Absolutely! We have courses for all levels, from beginners to experienced developers.'
                 }
               ].map((faq, index) => (
                 <motion.div
@@ -339,16 +354,16 @@ export default function ContactPage() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-white rounded-lg p-6"
+                  className="bg-background-elevated rounded-lg p-6 border border-neutral-800"
                 >
-                  <h3 className="font-semibold text-lg mb-2">{faq.q}</h3>
-                  <p className="text-neutral-600">{faq.a}</p>
+                  <h3 className="font-semibold text-lg mb-2 text-text-primary">{faq.q}</h3>
+                  <p className="text-text-secondary">{faq.a}</p>
                 </motion.div>
               ))}
             </div>
           </motion.div>
         </div>
       </section>
-    </>
+    </div>
   )
 }

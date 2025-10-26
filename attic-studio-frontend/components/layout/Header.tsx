@@ -3,13 +3,14 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname, useRouter } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils/cn'
 
 const navigation = [
   { name: 'Home', href: '/' },
-  { name: 'About', href: '/about' },
   { name: 'Services', href: '/services' },
+  { name: 'Mentorship', href: '/courses' },
   { name: 'Games', href: '/games' },
   { name: 'Contact', href: '/contact' },
 ]
@@ -17,6 +18,14 @@ const navigation = [
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isNavigating, setIsNavigating] = useState(false)
+  const [mounted, setMounted] = useState(false)
+  const pathname = usePathname()
+  const router = useRouter()
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   useEffect(() => {
     const handleScroll = () => {
@@ -26,8 +35,38 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  useEffect(() => {
+    setIsNavigating(false)
+  }, [pathname])
+
+  const handleNavigation = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (pathname === href) return
+
+    e.preventDefault()
+    setIsNavigating(true)
+    setIsMobileMenuOpen(false)
+
+    // Small delay for visual feedback
+    setTimeout(() => {
+      router.push(href)
+    }, 100)
+  }
+
   return (
     <>
+      {/* Loading Bar */}
+      <AnimatePresence>
+        {isNavigating && (
+          <motion.div
+            initial={{ scaleX: 0 }}
+            animate={{ scaleX: 1 }}
+            exit={{ scaleX: 0 }}
+            transition={{ duration: 0.5, ease: 'easeOut' }}
+            className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-secondary via-accent to-primary z-[100] origin-left"
+          />
+        )}
+      </AnimatePresence>
+
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
@@ -73,10 +112,20 @@ export default function Header() {
                 >
                   <Link
                     href={item.href}
-                    className="relative font-medium text-text-secondary hover:text-secondary-glow transition-all duration-300 group"
+                    onClick={(e) => handleNavigation(e, item.href)}
+                    prefetch={true}
+                    className={cn(
+                      "relative font-medium transition-all duration-300 group",
+                      mounted && pathname === item.href
+                        ? "text-secondary"
+                        : "text-text-secondary hover:text-secondary-glow"
+                    )}
                   >
                     {item.name}
-                    <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-secondary to-accent group-hover:w-full transition-all duration-300" />
+                    <span className={cn(
+                      "absolute -bottom-1 left-0 h-0.5 bg-gradient-to-r from-secondary to-accent transition-all duration-300",
+                      mounted && pathname === item.href ? "w-full" : "w-0 group-hover:w-full"
+                    )} />
                   </Link>
                 </motion.div>
               ))}
@@ -90,6 +139,8 @@ export default function Header() {
               >
                 <Link
                   href="/contact"
+                  onClick={(e) => handleNavigation(e, '/contact')}
+                  prefetch={true}
                   className="btn-primary"
                 >
                   Get in Touch
@@ -143,8 +194,14 @@ export default function Header() {
                   >
                     <Link
                       href={item.href}
-                      onClick={() => setIsMobileMenuOpen(false)}
-                      className="block py-3 text-2xl font-medium text-text-primary hover:text-secondary-glow transition-all duration-300"
+                      onClick={(e) => handleNavigation(e, item.href)}
+                      prefetch={true}
+                      className={cn(
+                        "block py-3 text-2xl font-medium transition-all duration-300",
+                        mounted && pathname === item.href
+                          ? "text-secondary"
+                          : "text-text-primary hover:text-secondary-glow"
+                      )}
                     >
                       {item.name}
                     </Link>
@@ -158,7 +215,8 @@ export default function Header() {
               >
                 <Link
                   href="/contact"
-                  onClick={() => setIsMobileMenuOpen(false)}
+                  onClick={(e) => handleNavigation(e, '/contact')}
+                  prefetch={true}
                   className="btn-primary w-full text-center"
                 >
                   Get in Touch

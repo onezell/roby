@@ -109,7 +109,7 @@ export default function AboutPage() {
             className="text-center max-w-4xl mx-auto"
           >
             <h1 className="heading-1 mb-6 text-text-primary">
-              We Create <span className="gradient-text">Accessible</span> System-Driven RPGs
+              We Create <span className="gradient-text">Accessible</span> System-Driven <span className="gradient-text">RPGs</span>
             </h1>
             <p className="text-xl text-text-secondary mb-8">
               Attic Studio is an experienced development team with a proven track record across licensed
