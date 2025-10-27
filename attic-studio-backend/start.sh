@@ -18,4 +18,5 @@ else
 fi
 
 echo "Starting Strapi in production mode..."
-exec NODE_ENV=production npm run start
+export NODE_ENV=production
+exec npm run start
