@@ -11,9 +11,13 @@ RUN npm ci
 # Copy application files
 COPY . .
 
+# Copy startup script
+COPY start.sh /app/start.sh
+RUN chmod +x /app/start.sh
+
 # Expose port
 EXPOSE 1337
 
-# Use develop mode - builds admin at runtime in correct environment
-# This avoids zod/v4 build errors during Docker image creation
-CMD ["npm", "run", "develop"]
+# Use startup script to build admin then start Strapi
+# Admin builds at container startup to avoid zod/v4 errors during image build
+CMD ["/app/start.sh"]
