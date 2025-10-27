@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button'
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background-primary">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
         {/* Fullscreen Logo Animation Video */}

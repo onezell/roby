@@ -8,7 +8,7 @@ import Button from '@/components/ui/Button'
 
 export default function GamesPage() {
   return (
-    <div className="min-h-screen bg-background-primary">
+    <div className="min-h-screen">
       {/* Hero Section - Mysterious Teaser */}
       <section className="relative py-20 overflow-hidden">
         <div className="absolute inset-0 overflow-hidden">

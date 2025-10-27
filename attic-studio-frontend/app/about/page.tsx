@@ -82,7 +82,7 @@ const values = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-background-primary">
+    <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
         {/* Animated background */}

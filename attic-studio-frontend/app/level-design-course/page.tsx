@@ -7,7 +7,7 @@ import Button from '@/components/ui/Button'
 
 export default function LevelDesignCoursePage() {
   return (
-    <div className="min-h-screen bg-background-primary">
+    <div className="min-h-screen">
       {/* Warning Banner */}
       <section className="bg-accent/20 border-b border-accent/30 py-3">
         <div className="container-custom">
