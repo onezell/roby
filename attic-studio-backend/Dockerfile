@@ -5,15 +5,18 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install ALL dependencies (including dev for build)
+RUN npm ci
 
 # Copy application files
 COPY . .
 
 # Build Strapi admin
 ENV NODE_ENV=production
-RUN npm run build || echo "No build script found"
+RUN npm run build || echo "Build skipped"
+
+# Remove dev dependencies after build
+RUN npm prune --production
 
 # Expose port
 EXPOSE 1337
