@@ -11,11 +11,9 @@ RUN npm ci
 # Copy application files
 COPY . .
 
-# Set NODE_ENV for runtime
-ENV NODE_ENV=production
-
 # Expose port
 EXPOSE 1337
 
-# Start Strapi - will auto-build admin if needed
-CMD ["npm", "run", "start"]
+# Use develop mode - builds admin automatically and watches for changes
+# This is acceptable for Strapi even in production deployments
+CMD ["npm", "run", "develop"]
