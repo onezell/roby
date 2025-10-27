@@ -12,11 +12,14 @@ RUN npm ci
 COPY . .
 
 # Build Strapi admin
-ENV NODE_ENV=production
-RUN npm run build || echo "Build skipped"
+# Don't set NODE_ENV during build - it breaks dependency resolution
+RUN npm run build
 
 # Remove dev dependencies after build
 RUN npm prune --production
+
+# Set NODE_ENV for runtime
+ENV NODE_ENV=production
 
 # Expose port
 EXPOSE 1337
