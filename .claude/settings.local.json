@@ -17,7 +17,10 @@
       "Bash(if [ ! -d \"temp_home\" ])",
       "Bash(then unzip -q \"HOME PAGE.docx\" \"word/document.xml\" -d temp_home)",
       "Bash(fi)",
-      "Bash(python3:*)"
+      "Bash(python3:*)",
+      "Bash(git add:*)",
+      "Bash(git check-ignore:*)",
+      "Bash(git commit -m \"$(cat <<''EOF''\nAdd missing images and remove solid backgrounds\n\nIMAGES:\n- Add fatewalkers-characters.png (681KB game art)\n- Add hatchlings/logo.png (66KB mentorship logo)\n- Add quickload/logo.png (11KB accelerator logo)\n- Images were ignored by .gitignore (*.png rule)\n- Added with -f flag to include in repository\n\nBACKGROUNDS:\n- Remove bg-background-primary from all pages\n- Now shows animated background effects\n- Body''s #0a1128 dark navy base is visible\n- Allows animated blur effects to show through\n\nFATEWALKERS IMAGE FIX:\n- Add unoptimized prop to prevent Next.js 404\n- Ensures image loads correctly in production\n\nFiles modified:\n- app/page.tsx (Homepage)\n- app/about/page.tsx\n- app/services/page.tsx\n- app/games/page.tsx (+ unoptimized prop)\n- app/contact/page.tsx\n- app/courses/page.tsx\n- app/level-design-course/page.tsx\n- app/team/page.tsx\n\n🤖 Generated with [Claude Code](https://claude.com/claude-code)\n\nCo-Authored-By: Claude <noreply@anthropic.com>\nEOF\n)\")"
     ],
     "deny": [],
     "ask": []
