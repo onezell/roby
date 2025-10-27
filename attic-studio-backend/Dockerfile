@@ -11,9 +11,11 @@ RUN npm ci
 # Copy application files
 COPY . .
 
+# Build the admin panel
+RUN npm run build
+
 # Expose port
 EXPOSE 1337
 
-# Use develop mode - builds admin automatically and watches for changes
-# This is acceptable for Strapi even in production deployments
-CMD ["npm", "run", "develop"]
+# Start Strapi
+CMD ["npm", "run", "start"]
