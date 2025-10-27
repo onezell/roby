@@ -1,7 +1,7 @@
 #!/bin/sh
 
 echo "Building Strapi admin panel..."
-npm run build
+NODE_ENV=production npm run build
 
 echo "Starting Strapi..."
-npm run start
+NODE_ENV=production npm run start

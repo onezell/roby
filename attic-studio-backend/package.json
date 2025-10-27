@@ -14,11 +14,10 @@
   "license": "ISC",
   "dependencies": {
     "@strapi/strapi": "^5.28.0",
-    "better-sqlite3": "^11.0.0"
-  },
-  "overrides": {
-    "ai": {
-      "zod": "^3.23.8"
-    }
+    "better-sqlite3": "^11.0.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.28.0",
+    "styled-components": "^6.1.13"
   }
 }

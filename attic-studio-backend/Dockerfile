@@ -5,9 +5,8 @@ WORKDIR /app
 # Copy package files
 COPY package*.json ./
 
-# Install dependencies with overrides
-# Using npm install instead of npm ci to apply package overrides
-RUN npm install --legacy-peer-deps
+# Install dependencies
+RUN npm ci
 
 # Copy application files
 COPY . .
