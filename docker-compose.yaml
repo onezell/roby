@@ -18,8 +18,7 @@ services:
       - ADMIN_JWT_SECRET=${STRAPI_ADMIN_JWT_SECRET:-7Tbwpp1tEwhEHZe9NuXkVO97WfHMBeKTwoCFh1mtXXk=}
       - TRANSFER_TOKEN_SALT=${STRAPI_TRANSFER_TOKEN_SALT:-JwQSRyO9HdxXssfjh+tpY/EBL4/dcn15bQSed2c1aDg=}
       - JWT_SECRET=${STRAPI_JWT_SECRET:-JKqGRSW2+rv2sV2JEzmIUFwwfZ6Lkb/l9eBAEMFrt6Q=}
-      - STRAPI_ADMIN_BACKEND_URL=${SERVICE_FQDN_BACKEND:-https://atticstudio.com}
-      - URL=${SERVICE_FQDN_BACKEND:-https://atticstudio.com}
+      - URL=${SERVICE_URL_BACKEND:-http://localhost:1337}
     volumes:
       - backend-data:/app/.tmp
       - backend-uploads:/app/public/uploads
@@ -36,8 +35,8 @@ services:
       - "80:3000"
     environment:
       - NODE_ENV=production
-      - NEXT_PUBLIC_STRAPI_URL=${SERVICE_FQDN_BACKEND:-http://backend:1337}
-      - NEXT_PUBLIC_SITE_URL=${SERVICE_FQDN_FRONTEND:-https://atticstudio.com}
+      - NEXT_PUBLIC_STRAPI_URL=${SERVICE_URL_BACKEND:-http://localhost:1337}
+      - NEXT_PUBLIC_SITE_URL=${SERVICE_URL_FRONTEND:-http://localhost:3000}
     depends_on:
       - backend
     networks:

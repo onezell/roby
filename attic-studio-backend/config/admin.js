@@ -1,4 +1,9 @@
 module.exports = ({ env }) => ({
+  url: env('URL', '/'),
+  serveAdminPanel: true,
+  forgotPassword: {
+    emailTemplate: {},
+  },
   auth: {
     secret: env('ADMIN_JWT_SECRET', 'changeThisToARandomString'),
   },
