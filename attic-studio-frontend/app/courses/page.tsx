@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaGraduationCap, FaUsers, FaLightbulb, FaHandshake, FaStar, FaDiscord, FaArrowRight, FaHeart } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
@@ -37,6 +38,22 @@ export default function MentorshipPage() {
               <br />
               to <span className="gradient-text">take off</span>
             </h1>
+
+            {/* Attic Hatchlings Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="flex justify-center mb-8"
+            >
+              <Image
+                src="/images/mentorship/Logo gialloP1.png"
+                alt="Attic Hatchlings"
+                width={150}
+                height={150}
+                className="h-24 w-auto object-contain"
+              />
+            </motion.div>
 
             <p className="text-xl text-text-secondary mb-8 leading-relaxed">
               We believe that supporting the future of gaming means supporting the next generation of developers.

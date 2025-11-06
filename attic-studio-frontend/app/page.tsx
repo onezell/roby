@@ -114,6 +114,24 @@ export default function HomePage() {
             <h2 className="heading-2 text-text-primary mb-4">
               Accelerated by <span className="gradient-text">Quickload</span>
             </h2>
+
+            {/* Quickload Logo */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="flex justify-center items-center gap-8 mb-6"
+            >
+              <Image
+                src="/images/quickload/Quickload logo.png"
+                alt="Quickload Accelerator"
+                width={200}
+                height={80}
+                className="h-16 w-auto object-contain opacity-90"
+              />
+            </motion.div>
+
             <p className="text-xl text-text-secondary max-w-3xl mx-auto mb-4">
               powered by OGR, Microsoft and 34BigThings
             </p>
