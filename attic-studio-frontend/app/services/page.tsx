@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
+import Image from 'next/image'
 import { FaRocket, FaCode, FaUsers, FaGamepad, FaLightbulb, FaHandshake, FaChartLine } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
@@ -82,8 +83,14 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="aspect-square bg-gradient-to-br from-secondary/10 to-primary/10 rounded-2xl border border-neutral-800 flex items-center justify-center">
-                <FaRocket className="text-8xl text-secondary/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/services/game-production.png"
+                  alt="Videogame Production"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -101,8 +108,14 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               className="order-2 md:order-1"
             >
-              <div className="aspect-square bg-gradient-to-br from-accent/10 to-secondary/10 rounded-2xl border border-neutral-800 flex items-center justify-center">
-                <FaGamepad className="text-8xl text-accent/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/services/game-design.png"
+                  alt="Game Design"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
@@ -168,8 +181,14 @@ export default function ServicesPage() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <div className="aspect-square bg-gradient-to-br from-primary/10 to-accent/10 rounded-2xl border border-neutral-800 flex items-center justify-center">
-                <FaCode className="text-8xl text-primary/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/services/co-development.png"
+                  alt="Co-development and Work-for-Hire"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
           </div>
@@ -187,8 +206,14 @@ export default function ServicesPage() {
               transition={{ duration: 0.6 }}
               className="order-2 md:order-1"
             >
-              <div className="aspect-square bg-gradient-to-br from-secondary/10 to-accent/10 rounded-2xl border border-neutral-800 flex items-center justify-center">
-                <FaLightbulb className="text-8xl text-secondary/30" />
+              <div className="aspect-square rounded-2xl overflow-hidden">
+                <Image
+                  src="/images/services/beyond-game-dev.png"
+                  alt="Beyond Game Development"
+                  width={600}
+                  height={600}
+                  className="w-full h-full object-cover"
+                />
               </div>
             </motion.div>
 
