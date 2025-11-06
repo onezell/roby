@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { z } from 'zod'
+import { FaDiscord, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
 const contactSchema = z.object({
@@ -18,28 +19,32 @@ type ContactFormData = z.infer<typeof contactSchema>
 
 const contactInfo = [
   {
-    icon: '📧',
+    icon: FaEnvelope,
     title: 'Email',
     content: 'hello@atticstudio.games',
-    link: 'mailto:hello@atticstudio.games'
+    link: 'mailto:hello@atticstudio.games',
+    color: 'text-secondary'
   },
   {
-    icon: '💬',
+    icon: FaDiscord,
     title: 'Discord',
     content: 'Join our community',
-    link: 'https://discord.gg/3eajWBkGyD'
+    link: 'https://discord.gg/3eajWBkGyD',
+    color: 'text-accent'
   },
   {
-    icon: '💼',
+    icon: FaLinkedin,
     title: 'LinkedIn',
     content: 'Connect with us',
-    link: 'https://www.linkedin.com/company/atticstudio-games/'
+    link: 'https://www.linkedin.com/company/atticstudio-games/',
+    color: 'text-primary'
   },
   {
-    icon: '📍',
+    icon: FaMapMarkerAlt,
     title: 'Location',
     content: 'Milan, Italy',
-    link: '#'
+    link: '#',
+    color: 'text-text-muted'
   }
 ]
 
@@ -61,13 +66,22 @@ export default function ContactPage() {
     setSubmitStatus('idle')
 
     try {
-      // Simulazione invio form - sostituire con API reale
-      await new Promise(resolve => setTimeout(resolve, 2000))
-      console.log('Form data:', data)
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      })
+
+      if (!response.ok) {
+        throw new Error('Failed to send message')
+      }
 
       setSubmitStatus('success')
       reset()
     } catch (error) {
+      console.error('Error submitting form:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -135,8 +149,8 @@ export default function ContactPage() {
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start gap-4 p-4 rounded-lg bg-background-tertiary/50 hover:bg-background-tertiary transition-colors group border border-neutral-800"
                   >
-                    <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center text-2xl group-hover:scale-110 transition-transform">
-                      {info.icon}
+                    <div className="w-12 h-12 bg-gradient-to-br from-secondary to-accent rounded-lg flex items-center justify-center group-hover:scale-110 transition-transform">
+                      <info.icon className={`text-2xl ${info.color}`} />
                     </div>
                     <div>
                       <h3 className="font-semibold text-text-primary mb-1">{info.title}</h3>

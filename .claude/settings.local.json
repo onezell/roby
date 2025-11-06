@@ -32,7 +32,8 @@
       "Bash(python -c:*)",
       "Bash(do cp \"$dir\"*\"with blur\"*.png \"c:/Users/miche/roby/attic-studio-frontend/public/images/services/\")",
       "Bash(tasklist:*)",
-      "Bash(findstr:*)"
+      "Bash(findstr:*)",
+      "Bash(curl:*)"
     ],
     "deny": [],
     "ask": []

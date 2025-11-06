@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { FaGraduationCap, FaUsers, FaLightbulb, FaHandshake, FaStar, FaDiscord, FaArrowRight, FaHeart } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
-export default function MentorshipPage() {
+export default function MentorshipTrainingPage() {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -146,24 +146,12 @@ export default function MentorshipPage() {
               <p className="text-text-secondary leading-relaxed mb-4">
                 Attic Hatchlings is our free mentorship program on Discord.
               </p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start gap-2 text-text-secondary text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Post your CV and portfolio to get expert feedback</span>
-                </li>
-                <li className="flex items-start gap-2 text-text-secondary text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Ask for career advice</span>
-                </li>
-                <li className="flex items-start gap-2 text-text-secondary text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Find peers to create your own projects</span>
-                </li>
-                <li className="flex items-start gap-2 text-text-secondary text-sm">
-                  <span className="text-primary mt-1">•</span>
-                  <span>Book a free live mentorship session once a week</span>
-                </li>
-              </ul>
+              <p className="text-text-secondary leading-relaxed mb-4">
+                Post your CV and portfolio to get expert feedback, ask for career advice, or find peers to create your own projects.
+              </p>
+              <p className="text-text-secondary leading-relaxed mb-6">
+                You can also book a free live mentorship session, open to the community, held once a week on Discord.
+              </p>
               <a
                 href="https://discord.gg/3eajWBkGyD"
                 target="_blank"
@@ -199,7 +187,7 @@ export default function MentorshipPage() {
               </p>
             </motion.div>
 
-            {/* Training & Tutoring */}
+            {/* Premium Courses */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -211,24 +199,19 @@ export default function MentorshipPage() {
                 <FaGraduationCap className="text-2xl text-white" />
               </div>
               <h3 className="heading-3 text-text-primary mb-3">
-                TRAINING & TUTORING
+                Premium Courses
               </h3>
-              <p className="text-text-secondary leading-relaxed mb-4">
-                We partnered with <strong className="text-text-primary">Digital Bros Game Academy</strong> to provide tutoring
-                for students of the Game Design Online Master's program.
+              <p className="text-text-secondary leading-relaxed mb-6">
+                We create premium courses aimed at specializing after academies end. Our courses provide in-depth training
+                in specific areas of game development to help you stand out in the industry.
               </p>
-              <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                Through this partnership, we support students in their learning journey with personalized guidance and industry expertise.
-              </p>
-              <a
-                href="https://dbgameacademy.it/"
-                target="_blank"
-                rel="noopener noreferrer"
+              <Link
+                href="/level-design-course"
                 className="text-secondary hover:text-secondary-glow transition-colors inline-flex items-center gap-2 font-semibold"
               >
-                Learn More About DBGA
+                View Level Design Course
                 <FaArrowRight />
-              </a>
+              </Link>
             </motion.div>
           </div>
         </div>

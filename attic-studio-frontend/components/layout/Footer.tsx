@@ -9,16 +9,11 @@ const footerLinks = {
     title: 'Company',
     links: [
       { name: 'Home', href: '/' },
+      { name: 'Services', href: '/services' },
+      { name: 'Mentorship & Training', href: '/courses' },
+      { name: 'Courses', href: '/level-design-course' },
       { name: 'Games', href: '/games' },
       { name: 'Contact', href: '/contact' },
-    ],
-  },
-  services: {
-    title: 'Services',
-    links: [
-      { name: 'Original IPs', href: '/games' },
-      { name: 'Consulting & Work-for-Hire', href: '/services' },
-      { name: 'Attic Hatchlings', href: '/courses' },
     ],
   },
   connect: {
@@ -35,7 +30,7 @@ export default function Footer() {
   return (
     <footer className="bg-background-secondary border-t border-secondary/20">
       <div className="container-custom py-12 lg:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Brand Column */}
           <div className="md:col-span-1">
             <Link href="/" className="inline-block mb-4">

@@ -1,41 +1,21 @@
 /**
- * TEMPORARILY DISABLED - Partnership with Digital Bros Game Academy
+ * Level Design Online Course - Premium Course Offering
  *
- * This page has been temporarily disabled because Attic Studio has partnered
- * with Digital Bros Game Academy to provide tutoring for their Game Design
- * Online Master's program students. Independent course offerings are on hold.
- *
- * This page can be re-enabled in the future by removing the notice banner
- * and restoring navigation links.
+ * This page showcases our Level Design course offering.
+ * The course can be enabled/disabled by commenting/uncommenting the
+ * navigation link in the Header component and the link in courses/page.tsx
  */
 
 'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaGraduationCap, FaCalendar, FaClock, FaEuroSign, FaUsers, FaCheckCircle, FaArrowRight, FaInfoCircle } from 'react-icons/fa'
+import { FaGraduationCap, FaCalendar, FaClock, FaEuroSign, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
 export default function LevelDesignCoursePage() {
   return (
     <div className="min-h-screen">
-      {/* Temporarily Disabled Notice */}
-      <section className="bg-accent/20 border-b border-accent/30 py-6">
-        <div className="container-custom">
-          <div className="flex items-center justify-center gap-3">
-            <FaInfoCircle className="text-accent text-xl flex-shrink-0" />
-            <div className="text-center">
-              <p className="text-accent text-lg font-bold mb-1">
-                Course Temporarily Unavailable
-              </p>
-              <p className="text-accent/80 text-sm">
-                Due to our partnership with Digital Bros Game Academy, independent course offerings are currently on hold.
-                Visit our Mentorship page to learn about our tutoring services and free mentorship community.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
@@ -80,7 +60,7 @@ export default function LevelDesignCoursePage() {
               Build your first great level and make your portfolio shine
             </p>
 
-            <p className="text-lg text-text-muted mb-12">
+            <p className="text-lg text-text-muted mb-8">
               Language: Italian | Starting: January 2025 | Duration: 8 weeks | Cost: 399€ including IVA
             </p>
           </motion.div>
@@ -88,7 +68,7 @@ export default function LevelDesignCoursePage() {
       </section>
 
       {/* Course Overview */}
-      <section className="section-padding">
+      <section className="py-12">
         <div className="container-custom">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -110,9 +90,8 @@ export default function LevelDesignCoursePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 text-center"
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <FaClock className="text-4xl text-secondary mx-auto mb-4" />
               <h3 className="heading-4 text-text-primary mb-2">Schedule</h3>
               <p className="text-text-secondary text-sm">
                 Once a week, 3-hour sessions outside working hours (24 hours total) + assignments
@@ -124,9 +103,8 @@ export default function LevelDesignCoursePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.1 }}
-              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 text-center"
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <FaUsers className="text-4xl text-accent mx-auto mb-4" />
               <h3 className="heading-4 text-text-primary mb-2">Capacity</h3>
               <p className="text-text-secondary text-sm">
                 Limited to 6 participants to ensure personalized guidance
@@ -138,9 +116,8 @@ export default function LevelDesignCoursePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 text-center"
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <FaCalendar className="text-4xl text-primary mx-auto mb-4" />
               <h3 className="heading-4 text-text-primary mb-2">Deadline</h3>
               <p className="text-text-secondary text-sm">
                 31st December 2025, or when the spots are all filled
@@ -152,9 +129,8 @@ export default function LevelDesignCoursePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.3 }}
-              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800 text-center"
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <FaEuroSign className="text-4xl text-secondary mx-auto mb-4" />
               <h3 className="heading-4 text-text-primary mb-2">Price</h3>
               <p className="text-text-secondary text-sm">
                 399€ including IVA
@@ -165,38 +141,37 @@ export default function LevelDesignCoursePage() {
       </section>
 
       {/* Requirements & Details */}
-      <section className="section-padding bg-background-tertiary/30">
+      <section className="py-12 bg-background-tertiary/30">
         <div className="container-custom">
-          <div className="grid md:grid-cols-2 gap-12 max-w-5xl mx-auto">
+          <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <h2 className="heading-2 text-text-primary mb-6">
+              <h3 className="heading-3 text-text-primary mb-4">
                 Requirements
-              </h2>
+              </h3>
               <p className="text-text-secondary leading-relaxed">
                 <strong className="text-text-primary">Basic game design knowledge</strong>, preferably a graduation in game design.
               </p>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
-              <h2 className="heading-2 text-text-primary mb-6">
+              <h3 className="heading-3 text-text-primary mb-4">
                 Important
-              </h2>
-              <div className="flex items-start gap-3 mb-4">
-                <FaCheckCircle className="text-secondary mt-1 flex-shrink-0" />
-                <p className="text-text-secondary">
-                  <strong className="text-text-primary">Lessons will be recorded</strong>, but live participation is recommended
-                </p>
-              </div>
+              </h3>
+              <p className="text-text-secondary leading-relaxed">
+                <strong className="text-text-primary">Lessons will be recorded</strong>, but live participation is recommended.
+              </p>
             </motion.div>
           </div>
         </div>
@@ -227,7 +202,7 @@ export default function LevelDesignCoursePage() {
               </Link>
               <Link href="/courses">
                 <Button variant="outline" size="lg">
-                  Back to Mentorship
+                  Back to Mentorship & Training
                 </Button>
               </Link>
             </div>
