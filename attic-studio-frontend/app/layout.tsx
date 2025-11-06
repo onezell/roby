@@ -2,23 +2,23 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Attic Studio - Sviluppo Videogiochi e Formazione',
-  description: 'Agenzia di sviluppo videogiochi che offre anche corsi di formazione nel settore gaming',
-  keywords: ['sviluppo videogiochi', 'game development', 'corsi gaming', 'unity', 'unreal engine'],
+  title: 'Attic Studio | Game Development | Services & Consulting | Mentoring and Training',
+  description: 'Game development studio based in Milan, Italy. We build original IPs, provide consulting and work-for-hire services, and mentor the next generation of game developers through Attic Hatchlings.',
+  keywords: ['game development', 'video games', 'game design', 'level design', 'consulting', 'work-for-hire', 'mentorship', 'Milan', 'Italy', 'RPG', 'system-driven games'],
   authors: [{ name: 'Attic Studio' }],
   creator: 'Attic Studio',
+  other: {
+    'geo.region': 'IT-MI',
+    'geo.placename': 'Milan',
+    'geo.position': '45.464664;9.188540',
+  },
   openGraph: {
     type: 'website',
-    locale: 'it_IT',
-    url: 'https://atticstudio.com',
+    locale: 'en_US',
+    url: 'https://staging.atticstudio.games',
     siteName: 'Attic Studio',
-    title: 'Attic Studio - Sviluppo Videogiochi e Formazione',
-    description: 'Agenzia di sviluppo videogiochi che offre anche corsi di formazione nel settore gaming',
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'Attic Studio - Sviluppo Videogiochi e Formazione',
-    description: 'Agenzia di sviluppo videogiochi che offre anche corsi di formazione nel settore gaming',
+    title: 'Attic Studio | Game Development | Services & Consulting | Mentoring and Training',
+    description: 'Game development studio based in Milan, Italy. We build original IPs, provide consulting and work-for-hire services, and mentor the next generation of game developers.',
   },
   robots: {
     index: true,
@@ -61,7 +61,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="it" className={`scroll-smooth ${agrandir.variable}`}>
+    <html lang="en" className={`scroll-smooth ${agrandir.variable}`}>
       <body className="min-h-screen bg-background antialiased font-body relative">
         <AnimatedBackground />
         <div className="relative z-10">

@@ -263,7 +263,7 @@ export default function HomePage() {
               <div className="flex items-start gap-6">
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-secondary/30">
                   <Image
-                    src="/images/founders/roberta.jpg"
+                    src="/images/founders/roberta-migliori.jpg"
                     alt="Roberta Migliori"
                     width={96}
                     height={96}
@@ -305,7 +305,7 @@ export default function HomePage() {
               <div className="flex items-start gap-6">
                 <div className="w-24 h-24 rounded-full overflow-hidden flex-shrink-0 border-2 border-secondary/30">
                   <Image
-                    src="/images/founders/edmondo.jpg"
+                    src="/images/founders/edmondo-guerci.jpg"
                     alt="Edmondo Guerci"
                     width={96}
                     height={96}

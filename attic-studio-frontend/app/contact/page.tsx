@@ -10,10 +10,8 @@ import Button from '@/components/ui/Button'
 const contactSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
   email: z.string().email('Invalid email address'),
-  phone: z.string().optional(),
   subject: z.string().min(5, 'Subject must be at least 5 characters'),
   message: z.string().min(20, 'Message must be at least 20 characters'),
-  type: z.enum(['project', 'course', 'info', 'other'])
 })
 
 type ContactFormData = z.infer<typeof contactSchema>
@@ -22,8 +20,8 @@ const contactInfo = [
   {
     icon: '📧',
     title: 'Email',
-    content: 'roberta.migliori@atticstudio.games',
-    link: 'mailto:roberta.migliori@atticstudio.games'
+    content: 'hello@atticstudio.games',
+    link: 'mailto:hello@atticstudio.games'
   },
   {
     icon: '💬',
@@ -35,13 +33,13 @@ const contactInfo = [
     icon: '💼',
     title: 'LinkedIn',
     content: 'Connect with us',
-    link: 'https://linkedin.com'
+    link: 'https://www.linkedin.com/company/atticstudio-games/'
   },
   {
-    icon: '🐦',
-    title: 'Twitter',
-    content: 'Follow us',
-    link: 'https://twitter.com'
+    icon: '📍',
+    title: 'Location',
+    content: 'Milan, Italy',
+    link: '#'
   }
 ]
 
@@ -145,23 +143,6 @@ export default function ContactPage() {
                   </motion.a>
                 ))}
               </div>
-
-              {/* Social Links */}
-              <div className="mt-12">
-                <h3 className="font-semibold text-text-primary mb-4">Follow Us</h3>
-                <div className="flex gap-3">
-                  {['LinkedIn', 'Twitter', 'GitHub', 'YouTube'].map((social) => (
-                    <motion.a
-                      key={social}
-                      href="#"
-                      whileHover={{ scale: 1.1, y: -2 }}
-                      className="w-10 h-10 bg-background-tertiary rounded-lg flex items-center justify-center text-text-secondary hover:bg-gradient-to-br hover:from-secondary hover:to-accent hover:text-white transition-all border border-neutral-800"
-                    >
-                      {social[0]}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
             </motion.div>
 
             {/* Contact Form */}
@@ -207,38 +188,6 @@ export default function ContactPage() {
                       {errors.email && (
                         <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>
                       )}
-                    </div>
-                  </div>
-
-                  {/* Phone and Type Row */}
-                  <div className="grid md:grid-cols-2 gap-6">
-                    <div>
-                      <label htmlFor="phone" className="label">
-                        Phone
-                      </label>
-                      <input
-                        {...register('phone')}
-                        type="tel"
-                        id="phone"
-                        className="input"
-                        placeholder="+1 234 567 8900"
-                      />
-                    </div>
-
-                    <div>
-                      <label htmlFor="type" className="label">
-                        Inquiry Type *
-                      </label>
-                      <select
-                        {...register('type')}
-                        id="type"
-                        className="input"
-                      >
-                        <option value="project">New Project</option>
-                        <option value="course">Course Information</option>
-                        <option value="info">General Information</option>
-                        <option value="other">Other</option>
-                      </select>
                     </div>
                   </div>
 
@@ -312,56 +261,6 @@ export default function ContactPage() {
               </div>
             </motion.div>
           </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="section-padding bg-background-tertiary/30">
-        <div className="container-custom">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl mx-auto"
-          >
-            <h2 className="heading-2 text-center mb-12 text-text-primary">
-              <span className="gradient-text">FAQ</span>
-            </h2>
-
-            <div className="space-y-4">
-              {[
-                {
-                  q: 'How much does game development cost?',
-                  a: 'Cost depends on project complexity. We offer custom quotes after a free initial consultation.'
-                },
-                {
-                  q: 'How long does development take?',
-                  a: 'Timeline varies from 3 months for simple projects to 12+ months for complex multiplatform games.'
-                },
-                {
-                  q: 'Do you offer post-launch support?',
-                  a: 'Yes, we offer customized maintenance and update packages for all our projects.'
-                },
-                {
-                  q: 'Can I join a course without experience?',
-                  a: 'Absolutely! We have courses for all levels, from beginners to experienced developers.'
-                }
-              ].map((faq, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.1 }}
-                  className="bg-background-elevated rounded-lg p-6 border border-neutral-800"
-                >
-                  <h3 className="font-semibold text-lg mb-2 text-text-primary">{faq.q}</h3>
-                  <p className="text-text-secondary">{faq.a}</p>
-                </motion.div>
-              ))}
-            </div>
-          </motion.div>
         </div>
       </section>
     </div>

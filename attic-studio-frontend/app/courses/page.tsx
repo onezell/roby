@@ -182,7 +182,7 @@ export default function MentorshipPage() {
               </p>
             </motion.div>
 
-            {/* Premium Courses */}
+            {/* Training & Tutoring */}
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -194,21 +194,24 @@ export default function MentorshipPage() {
                 <FaGraduationCap className="text-2xl text-white" />
               </div>
               <h3 className="heading-3 text-text-primary mb-3">
-                Premium Courses
+                TRAINING & TUTORING
               </h3>
               <p className="text-text-secondary leading-relaxed mb-4">
-                We create premium courses aimed at <strong className="text-text-primary">specializing after academies</strong> end.
+                We partnered with <strong className="text-text-primary">Digital Bros Game Academy</strong> to provide tutoring
+                for students of the Game Design Online Master's program.
               </p>
               <p className="text-text-secondary text-sm leading-relaxed mb-6">
-                Current offering: <strong className="text-text-primary">Level Design Online Course</strong> starting January 2025
+                Through this partnership, we support students in their learning journey with personalized guidance and industry expertise.
               </p>
-              <Link
-                href="/level-design-course"
+              <a
+                href="https://dbgameacademy.it/"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="text-secondary hover:text-secondary-glow transition-colors inline-flex items-center gap-2 font-semibold"
               >
-                Learn More
+                Learn More About DBGA
                 <FaArrowRight />
-              </Link>
+              </a>
             </motion.div>
           </div>
         </div>

@@ -1,19 +1,39 @@
+/**
+ * TEMPORARILY DISABLED - Partnership with Digital Bros Game Academy
+ *
+ * This page has been temporarily disabled because Attic Studio has partnered
+ * with Digital Bros Game Academy to provide tutoring for their Game Design
+ * Online Master's program students. Independent course offerings are on hold.
+ *
+ * This page can be re-enabled in the future by removing the notice banner
+ * and restoring navigation links.
+ */
+
 'use client'
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { FaGraduationCap, FaCalendar, FaClock, FaEuroSign, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
+import { FaGraduationCap, FaCalendar, FaClock, FaEuroSign, FaUsers, FaCheckCircle, FaArrowRight, FaInfoCircle } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
 export default function LevelDesignCoursePage() {
   return (
     <div className="min-h-screen">
-      {/* Warning Banner */}
-      <section className="bg-accent/20 border-b border-accent/30 py-3">
+      {/* Temporarily Disabled Notice */}
+      <section className="bg-accent/20 border-b border-accent/30 py-6">
         <div className="container-custom">
-          <p className="text-accent text-center text-sm font-semibold">
-            NOTE: This page is temporary and can be enabled/disabled. Content may change.
-          </p>
+          <div className="flex items-center justify-center gap-3">
+            <FaInfoCircle className="text-accent text-xl flex-shrink-0" />
+            <div className="text-center">
+              <p className="text-accent text-lg font-bold mb-1">
+                Course Temporarily Unavailable
+              </p>
+              <p className="text-accent/80 text-sm">
+                Due to our partnership with Digital Bros Game Academy, independent course offerings are currently on hold.
+                Visit our Mentorship page to learn about our tutoring services and free mentorship community.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
 

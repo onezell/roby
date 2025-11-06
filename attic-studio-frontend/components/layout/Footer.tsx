@@ -16,17 +16,17 @@ const footerLinks = {
   services: {
     title: 'Services',
     links: [
+      { name: 'Original IPs', href: '/games' },
       { name: 'Consulting & Work-for-Hire', href: '/services' },
       { name: 'Attic Hatchlings', href: '/courses' },
-      { name: 'Level Design Course', href: '/level-design-course' },
     ],
   },
   connect: {
     title: 'Connect',
     links: [
-      { name: 'LinkedIn', href: 'https://linkedin.com' },
-      { name: 'Twitter', href: 'https://twitter.com' },
-      { name: 'Email', href: 'mailto:roberta.migliori@atticstudio.games' },
+      { name: 'LinkedIn', href: 'https://www.linkedin.com/company/atticstudio-games/' },
+      { name: 'Email', href: 'mailto:hello@atticstudio.games' },
+      { name: 'Discord', href: 'https://discord.gg/3eajWBkGyD' },
     ],
   },
 }
@@ -54,7 +54,10 @@ export default function Footer() {
               </motion.div>
             </Link>
             <p className="text-sm text-text-muted mb-4 max-w-xs">
-              A game dev startup finding its wings while helping others fly too.
+              Building accessible system-driven RPGs for a wider audience.
+            </p>
+            <p className="text-xs text-text-muted/70">
+              📍 Milan, Italy
             </p>
           </div>
 
