@@ -51,7 +51,7 @@ export default function MentorshipTrainingPage() {
                 alt="Attic Hatchlings"
                 width={150}
                 height={150}
-                className="h-24 w-auto object-contain"
+                className="h-24 w-auto object-contain drop-shadow-[0_0_30px_rgba(255,255,255,0.8)]"
               />
             </motion.div>
 
@@ -199,17 +199,18 @@ export default function MentorshipTrainingPage() {
                 <FaGraduationCap className="text-2xl text-white" />
               </div>
               <h3 className="heading-3 text-text-primary mb-3">
-                Premium Courses
+                Training & Tutoring
               </h3>
               <p className="text-text-secondary leading-relaxed mb-6">
-                We create premium courses aimed at specializing after academies end. Our courses provide in-depth training
-                in specific areas of game development to help you stand out in the industry.
+                We partnered with Digital Bros Game Academy to provide tutoring for students of the Game Design Online Master’s program.
               </p>
               <Link
-                href="/level-design-course"
-                className="text-secondary hover:text-secondary-glow transition-colors inline-flex items-center gap-2 font-semibold"
+                href="https://dbgameacademy.it/corsi-online/master-online-game-design/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-primary-light transition-colors inline-flex items-center gap-2 font-semibold"
               >
-                View Level Design Course
+                Learn more
                 <FaArrowRight />
               </Link>
             </motion.div>
