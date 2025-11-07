@@ -11,7 +11,6 @@ const footerLinks = {
       { name: 'Home', href: '/' },
       { name: 'Services', href: '/services' },
       { name: 'Mentorship & Training', href: '/courses' },
-      { name: 'Courses', href: '/level-design-course' },
       { name: 'Games', href: '/games' },
       { name: 'Contact', href: '/contact' },
     ],

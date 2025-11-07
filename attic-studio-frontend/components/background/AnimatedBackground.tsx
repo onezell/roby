@@ -5,10 +5,19 @@ import { useEffect, useState } from 'react'
 
 export default function AnimatedBackground() {
   const [particles, setParticles] = useState<Array<{ id: number; x: number; y: number; delay: number; duration: number }>>([])
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Generate random particles (stars)
-    const newParticles = Array.from({ length: 50 }, (_, i) => ({
+    // Check if mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    // Generate random particles (stars) - fewer on mobile
+    const particleCount = window.innerWidth < 768 ? 15 : 50
+    const newParticles = Array.from({ length: particleCount }, (_, i) => ({
       id: i,
       x: Math.random() * 100,
       y: Math.random() * 100,
@@ -16,6 +25,8 @@ export default function AnimatedBackground() {
       duration: 3 + Math.random() * 4
     }))
     setParticles(newParticles)
+
+    return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   return (
@@ -101,29 +112,37 @@ export default function AnimatedBackground() {
         />
       </svg>
 
-      {/* Floating orbs - blue */}
+      {/* Floating orbs - blue (no blur on mobile for performance) */}
       <motion.div
-        animate={{
+        animate={!isMobile ? {
           x: [0, 100, 0],
           y: [0, -50, 0],
           scale: [1, 1.3, 1],
+        } : {
+          x: [0, 50, 0],
+          y: [0, -25, 0],
+          scale: 1,
         }}
         transition={{
           duration: 25,
           repeat: Infinity,
           ease: 'easeInOut'
         }}
-        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full blur-2xl opacity-20"
+        className="absolute top-1/4 left-1/4 w-64 h-64 rounded-full md:blur-2xl opacity-20"
         style={{
           background: 'radial-gradient(circle, rgba(99, 159, 207, 0.8) 0%, transparent 70%)',
         }}
       />
 
       <motion.div
-        animate={{
+        animate={!isMobile ? {
           x: [0, -80, 0],
           y: [0, 60, 0],
           scale: [1, 1.2, 1],
+        } : {
+          x: [0, -40, 0],
+          y: [0, 30, 0],
+          scale: 1,
         }}
         transition={{
           duration: 20,
@@ -131,7 +150,7 @@ export default function AnimatedBackground() {
           ease: 'easeInOut',
           delay: 2
         }}
-        className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full blur-3xl opacity-15"
+        className="absolute top-1/3 right-1/4 w-80 h-80 rounded-full md:blur-3xl opacity-15"
         style={{
           background: 'radial-gradient(circle, rgba(125, 184, 255, 0.6) 0%, transparent 70%)',
         }}
