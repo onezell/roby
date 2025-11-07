@@ -200,11 +200,6 @@ export default function LevelDesignCoursePage() {
                   <FaArrowRight className="ml-2" />
                 </Button>
               </Link>
-              <Link href="/courses">
-                <Button variant="outline" size="lg">
-                  Back to Mentorship & Training
-                </Button>
-              </Link>
             </div>
           </motion.div>
         </div>
