@@ -50,8 +50,8 @@ export default function GamesPage() {
 
             {/* Quote - Bold Italic */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.4 }}
               className="text-center mb-4"
             >
@@ -62,8 +62,8 @@ export default function GamesPage() {
 
             {/* Subtitle - Italic */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.6 }}
               className="text-center mb-8"
             >
@@ -80,8 +80,8 @@ export default function GamesPage() {
         <div className="container-custom">
           <div className="max-w-3xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
               className="space-y-6"
@@ -126,8 +126,8 @@ export default function GamesPage() {
       <section className="py-8">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
             className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-8 text-center border border-neutral-800 max-w-4xl mx-auto"

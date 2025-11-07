@@ -109,8 +109,8 @@ export default function ContactPage() {
 
         <div className="container-custom relative z-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
             className="text-center"
           >
@@ -144,8 +144,8 @@ export default function ContactPage() {
                     href={info.link}
                     target={info.link.startsWith('http') ? '_blank' : undefined}
                     rel={info.link.startsWith('http') ? 'noopener noreferrer' : undefined}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
                     transition={{ duration: 0.5, delay: index * 0.1 }}
                     className="flex items-start gap-4 p-4 rounded-lg bg-background-tertiary/50 hover:bg-background-tertiary transition-colors group border border-neutral-800"
                   >
@@ -244,8 +244,8 @@ export default function ContactPage() {
                   {/* Submit Status Messages */}
                   {submitStatus === 'success' && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       className="p-4 bg-green-50 text-green-800 rounded-lg"
                     >
                       Message sent successfully! We'll get back to you as soon as possible.
@@ -254,8 +254,8 @@ export default function ContactPage() {
 
                   {submitStatus === 'error' && (
                     <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 1 }}
                       className="p-4 bg-red-50 text-red-800 rounded-lg"
                     >
                       An error occurred. Please try again later.
