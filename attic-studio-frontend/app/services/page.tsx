@@ -1,12 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaRocket, FaCode, FaUsers, FaGamepad, FaLightbulb, FaHandshake, FaChartLine } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
 export default function ServicesPage() {
+  const isMobile = useIsMobile()
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -248,10 +252,7 @@ export default function ServicesPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800"
           >
             <h2 className="heading-2 text-text-primary mb-4">

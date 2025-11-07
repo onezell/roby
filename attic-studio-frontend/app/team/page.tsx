@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 import { FaLinkedin, FaTwitter, FaGithub, FaEnvelope, FaBriefcase } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 import Link from 'next/link'
@@ -108,6 +110,8 @@ const teamMembers = [
 const departments = ['Tutti', 'Leadership', 'Engineering', 'Design', 'Art', 'Audio', 'Marketing']
 
 export default function TeamPage() {
+  const isMobile = useIsMobile()
+
   const [selectedDepartment, setSelectedDepartment] = useState('Tutti')
 
   const filteredMembers = teamMembers.filter(member =>
@@ -252,10 +256,7 @@ export default function TeamPage() {
       <section className="py-20 bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="bg-gradient-to-r from-accent-purple/20 via-background-tertiary to-accent-cyan/20 rounded-2xl p-12 text-center border border-neutral-800"
           >
             <FaBriefcase className="text-5xl text-accent-cyan mx-auto mb-6" />
@@ -284,10 +285,7 @@ export default function TeamPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">

@@ -12,8 +12,12 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { FaGraduationCap, FaCalendar, FaClock, FaEuroSign, FaUsers, FaCheckCircle, FaArrowRight } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 
 export default function LevelDesignCoursePage() {
+  const isMobile = useIsMobile()
+
   return (
     <div className="min-h-screen">
 
@@ -71,10 +75,7 @@ export default function LevelDesignCoursePage() {
       <section className="py-12">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="max-w-4xl mx-auto text-center mb-12"
           >
             <p className="text-text-secondary text-lg leading-relaxed">
@@ -86,10 +87,7 @@ export default function LevelDesignCoursePage() {
           {/* Course Details Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              {...getScrollAnimationProps(isMobile)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-4 text-text-primary mb-2">Schedule</h3>
@@ -99,10 +97,7 @@ export default function LevelDesignCoursePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...getScrollAnimationProps(isMobile, 0.1)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-4 text-text-primary mb-2">Capacity</h3>
@@ -112,10 +107,7 @@ export default function LevelDesignCoursePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              {...getScrollAnimationProps(isMobile, 0.2)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-4 text-text-primary mb-2">Deadline</h3>
@@ -125,10 +117,7 @@ export default function LevelDesignCoursePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.3 }}
+              {...getScrollAnimationProps(isMobile, 0.3)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-4 text-text-primary mb-2">Price</h3>
@@ -145,10 +134,7 @@ export default function LevelDesignCoursePage() {
         <div className="container-custom">
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              {...getScrollAnimationProps(isMobile)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-3 text-text-primary mb-4">
@@ -160,10 +146,7 @@ export default function LevelDesignCoursePage() {
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...getScrollAnimationProps(isMobile, 0.1)}
               className="bg-background-tertiary rounded-xl p-6 border border-neutral-800"
             >
               <h3 className="heading-3 text-text-primary mb-4">
@@ -181,10 +164,7 @@ export default function LevelDesignCoursePage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800 max-w-4xl mx-auto"
           >
             <h2 className="heading-2 text-text-primary mb-4">

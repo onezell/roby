@@ -1,6 +1,8 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 import Link from 'next/link'
 import { FaRocket, FaUsers, FaLightbulb, FaHandshake, FaTrophy, FaCode } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
@@ -81,6 +83,8 @@ const values = [
 ]
 
 export default function AboutPage() {
+  const isMobile = useIsMobile()
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -197,10 +201,7 @@ export default function AboutPage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -245,10 +246,7 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -299,10 +297,7 @@ export default function AboutPage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -348,10 +343,7 @@ export default function AboutPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800"
           >
             <h2 className="heading-2 text-text-primary mb-4">

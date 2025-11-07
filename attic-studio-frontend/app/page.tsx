@@ -5,8 +5,12 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { FaRocket, FaGamepad, FaUsers, FaCode, FaArrowRight, FaChartLine } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 
 export default function HomePage() {
+  const isMobile = useIsMobile()
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -85,10 +89,7 @@ export default function HomePage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -97,10 +98,7 @@ export default function HomePage() {
 
             {/* Quickload Logo */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...getScrollAnimationWithScaleProps(isMobile, 0.1)}
               className="flex justify-center items-center gap-8 mb-6"
             >
               <Image
@@ -118,10 +116,7 @@ export default function HomePage() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
+            {...getScrollAnimationProps(isMobile, 0.2)}
             className="max-w-3xl mx-auto text-center"
           >
             <p className="text-text-secondary leading-relaxed">
@@ -136,10 +131,7 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -153,10 +145,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Attic Hatchlings */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              {...getScrollAnimationProps(isMobile)}
               className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
@@ -183,10 +172,7 @@ export default function HomePage() {
 
             {/* Consulting & Work-for-Hire */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...getScrollAnimationProps(isMobile, 0.1)}
               className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-accent/50 transition-all hover:shadow-xl hover:shadow-accent/10"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center mb-6">
@@ -208,10 +194,7 @@ export default function HomePage() {
 
             {/* Original IPs */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              {...getScrollAnimationProps(isMobile, 0.2)}
               className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
             >
               <div className="w-16 h-16 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center mb-6">
@@ -235,10 +218,7 @@ export default function HomePage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -252,10 +232,7 @@ export default function HomePage() {
           <div className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
             {/* Roberta Migliori */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              {...getScrollAnimationProps(isMobile)}
               className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
             >
               <div className="flex items-start gap-6">
@@ -294,10 +271,7 @@ export default function HomePage() {
 
             {/* Edmondo Guerci */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              {...getScrollAnimationProps(isMobile, 0.2)}
               className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
             >
               <div className="flex items-start gap-6">
@@ -341,10 +315,7 @@ export default function HomePage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="bg-gradient-to-r from-secondary/20 via-background-tertiary to-accent/20 rounded-2xl p-12 text-center border border-neutral-800"
           >
             <h2 className="heading-2 text-text-primary mb-4">

@@ -1,12 +1,16 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import { useIsMobile } from '@/lib/hooks/useIsMobile'
+import { getScrollAnimationProps, getScrollAnimationWithScaleProps } from '@/lib/utils/animations'
 import Link from 'next/link'
 import Image from 'next/image'
 import { FaGraduationCap, FaUsers, FaLightbulb, FaHandshake, FaStar, FaDiscord, FaArrowRight, FaHeart } from 'react-icons/fa'
 import Button from '@/components/ui/Button'
 
 export default function MentorshipTrainingPage() {
+  const isMobile = useIsMobile()
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
@@ -89,10 +93,7 @@ export default function MentorshipTrainingPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="max-w-4xl mx-auto"
           >
             <h2 className="heading-2 text-text-primary mb-6 text-center">
@@ -117,10 +118,7 @@ export default function MentorshipTrainingPage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="text-center mb-12"
           >
             <h2 className="heading-2 text-text-primary mb-4">
@@ -131,10 +129,7 @@ export default function MentorshipTrainingPage() {
           <div className="grid md:grid-cols-3 gap-8">
             {/* Free Mentorship Community */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              {...getScrollAnimationProps(isMobile)}
               className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-primary/50 transition-all hover:shadow-xl hover:shadow-primary/10"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center mb-6">
@@ -165,10 +160,7 @@ export default function MentorshipTrainingPage() {
 
             {/* Private Mentorships */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.1 }}
+              {...getScrollAnimationProps(isMobile, 0.1)}
               className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-accent/50 transition-all hover:shadow-xl hover:shadow-accent/10"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-accent to-secondary rounded-lg flex items-center justify-center mb-6">
@@ -189,10 +181,7 @@ export default function MentorshipTrainingPage() {
 
             {/* Premium Courses */}
             <motion.div
-              initial={{ opacity: 0 }}
-              whileInView={{ opacity: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: 0.2 }}
+              {...getScrollAnimationProps(isMobile, 0.2)}
               className="bg-background-tertiary rounded-xl p-8 border border-neutral-800 hover:border-secondary/50 transition-all hover:shadow-xl hover:shadow-secondary/10"
             >
               <div className="w-14 h-14 bg-gradient-to-br from-secondary to-primary rounded-lg flex items-center justify-center mb-6">
@@ -222,10 +211,7 @@ export default function MentorshipTrainingPage() {
       <section className="section-padding">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="max-w-4xl mx-auto text-center"
           >
             <div className="bg-background-tertiary rounded-2xl p-8 border border-neutral-800">
@@ -250,10 +236,7 @@ export default function MentorshipTrainingPage() {
       <section className="section-padding bg-background-tertiary/30">
         <div className="container-custom">
           <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
+            {...getScrollAnimationProps(isMobile)}
             className="max-w-3xl mx-auto text-center"
           >
             <div className="bg-background-elevated rounded-2xl p-8 border border-neutral-800">
