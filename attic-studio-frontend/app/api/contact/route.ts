@@ -25,16 +25,16 @@ export async function POST(request: NextRequest) {
       to: process.env.CONTACT_EMAIL
     })
 
-    // Use password from env (or hardcoded fallback for testing)
-    const password = process.env.SMTP_PASS || 'Sr&Gcx9jF$4dPY6'
+    // Use app password from environment
+    const password = process.env.SMTP_PASS
 
     console.log('Final password length:', password.length)
 
-    // Create transporter with SMTP configuration
+    // Create transporter with SMTP configuration for Google Workspace
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST,
-      port: parseInt(process.env.SMTP_PORT || '465'),
-      secure: true, // true for 465, false for other ports
+      port: parseInt(process.env.SMTP_PORT || '587'),
+      secure: false, // false for 587 (STARTTLS), true for 465 (SSL/TLS)
       auth: {
         user: process.env.SMTP_USER,
         pass: password,
