@@ -28,6 +28,10 @@ export async function POST(request: NextRequest) {
     // Use app password from environment
     const password = process.env.SMTP_PASS
 
+    if (!password) {
+      throw new Error('SMTP password not configured')
+    }
+
     console.log('Final password length:', password.length)
 
     // Create transporter with SMTP configuration for Google Workspace
